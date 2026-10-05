@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="She Is Rising from the North: Education Works — A photo-book and exhibition by Hildah Kathure documenting 15 years of girls' education journeys in Northern Kenya with the MOV Foundation.">
+  <meta name="keywords"
+    content="She Is Rising from the North, Hildah Kathure, Northern Kenya, girls education, MOV Foundation, photobook, exhibition, Kenya">
+  <meta property="og:title" content="She Is Rising from the North: Education Works">
+  <meta property="og:description"
+    content="A powerful photo-documentary project capturing the transformative journey of girls in Northern Kenya through education.">
+  <meta property="og:image" content="assets/images/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a0e05">
+
+  <title>She Is Rising from the North: Education Works</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🌍</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+</head>
+
+<body>
+
+  <!-- ====================================================
+       NAVIGATION
+       ==================================================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#hero" class="nav__logo" aria-label="She Is Rising from the North — Home">
+          <span class="nav__logo-title">She Is Rising from the North</span>
+          <span class="nav__logo-sub">Education Works · MOV Foundation</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="#story">The Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#chapters">The Book</a></li>
+          <li><a href="#filmmaker">About</a></li>
+          <li><a href="#press">Press</a></li>
+          <li><a href="#support" class="nav__cta">Support the Project</a></li>
+        </ul>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <a href="#story">The Story</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#chapters">The Book</a>
+    <a href="#filmmaker">About Hildah</a>
+    <a href="#press">Press</a>
+    <a href="#support">Support</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ====================================================
+       HERO — Cinematic Edition
+       ==================================================== -->
+  <section class="hero" id="hero" aria-label="She Is Rising from the North">
+
+    <!-- Background image with grain overlay -->
+    <div class="hero__bg">
+      <img src="assets/images/hero.jpg"
+        alt="A young Samburu girl in traditional dress stands at golden hour on the Northern Kenya savanna, looking toward the horizon"
+        fetchpriority="high" width="1920" height="1080">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <!-- Floating credential pills (top-right) -->
+    <div class="hero__credentials" aria-label="Project credentials">
+      <div class="hero__cred-pill">
+        <span class="hero__cred-dot" aria-hidden="true"></span>
+        MOV Foundation
+      </div>
+      <div class="hero__cred-pill">
+        <span class="hero__cred-dot hero__cred-dot--gold" aria-hidden="true"></span>
+        Launched Nairobi · Sep 2026
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="hero__content">
+      <div class="container">
+        <div class="hero__inner">
+
+          <!-- Eyebrow -->
+          <div class="hero__eyebrow-wrap">
+            <span class="hero__eyebrow-line" aria-hidden="true"></span>
+            <p class="hero__eyebrow">A Photo-Book &amp; Exhibition &nbsp;·&nbsp; Northern Kenya</p>
+          </div>
+
+          <!-- Giant split headline -->
+          <h1 class="hero__title" aria-label="She Is Rising from the North">
+            <span class="hero__title-word hero__title-word--1">She Is</span>
+            <span class="hero__title-word hero__title-word--2">
+              <em class="hero__title-italic">Rising</em>
+            </span>
+            <span class="hero__title-word hero__title-word--3">
+              <span class="hero__title-from">from the</span>
+              <em class="hero__title-north">North</em>
+            </span>
+          </h1>
+
+          <!-- Divider with tagline -->
+          <div class="hero__divider" aria-hidden="true">
+            <span class="hero__divider-line"></span>
+            <span class="hero__divider-text">Education Works</span>
+            <span class="hero__divider-line"></span>
+          </div>
+
+          <!-- Subtitle -->
+          <p class="hero__subtitle">
+            <span class="hero__sub-stat">15 years.</span>
+            <span class="hero__sub-stat">500+ girls.</span>
+            <span class="hero__sub-stat">Thousands of kilometres</span>
+            from grazing fields to classrooms,
+            universities and professional life.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="hero__actions">
+            <a href="#gallery" class="btn btn--hero-primary" id="hero-gallery-btn">
+              <span class="btn__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <span class="btn__body">
+                <span class="btn__label">View the Gallery</span>
+                <span class="btn__sub">500+ photographs</span>
+              </span>
+            </a>
+            <a href="#chapters" class="btn btn--hero-outline" id="hero-book-btn">
+              <span class="btn__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </span>
+              <span class="btn__body">
+                <span class="btn__label">Explore the Book</span>
+                <span class="btn__sub">3 chapters · Hildah Kathure</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Press badge -->
+          <div class="hero__press-badge">
+            <span class="hero__press-logo">The Standard</span>
+            <span class="hero__press-sep" aria-hidden="true">·</span>
+            <span class="hero__press-quote">"A visual record of becoming"</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating impact cards -->
+    <div class="hero__float-cards" aria-hidden="true">
+      <div class="hero__float-card">
+        <span class="hero__float-num">500<sup>+</sup></span>
+        <span class="hero__float-lbl">Girls documented</span>
+      </div>
+      <div class="hero__float-card">
+        <span class="hero__float-num">15</span>
+        <span class="hero__float-lbl">Years of photography</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-label="Scroll down">
+      <div class="hero__scroll-mouse">
+        <div class="hero__scroll-wheel"></div>
+      </div>
+      <span>Discover the Story</span>
+    </div>
+
+  </section>
+
+  <!-- ====================================================
+       IMPACT STRIP
+       ==================================================== -->
+  <section class="impact-strip" aria-label="Impact statistics">
+    <div class="container">
+      <div class="impact-strip__grid">
+        <div class="impact-stat">
+          <span class="impact-stat__number" data-count="500" data-suffix="+">0+</span>
+          <span class="impact-stat__label">Girls Documented</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat__number" data-count="15" data-suffix=" Yrs">0 Yrs</span>
+          <span class="impact-stat__label">Years of Photography</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat__number" data-count="3">0</span>
+          <span class="impact-stat__label">Book Chapters</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat__number" data-count="4" data-suffix=" Counties">0 Counties</span>
+          <span class="impact-stat__label">of Northern Kenya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       STORY / ABOUT
+       ==================================================== -->
+  <section class="story" id="story" aria-label="About the project">
+    <div class="container">
+      <div class="story__grid">
+        <div class="story__visual reveal">
+          <img class="story__img-main" src="assets/images/students_reading.jpg"
+            alt="Students in Northern Kenya reading She Is Rising from the North" loading="lazy">
+          <div class="story__tag">"A photograph freezes a moment. These lives keep moving."</div>
+          <img class="story__img-accent" src="assets/images/photobooth_students.jpg"
+            alt="Students celebrating at the She Is Rising from the North photo booth" loading="lazy">
+        </div>
+
+        <div class="story__text reveal reveal-delay-2">
+          <p class="section-label">The Project</p>
+          <h2>Photographs that tell<br>a story of <em class="text-earth">becoming</em></h2>
+
+          <p>
+            <strong>She Is Rising from the North: Education Works</strong> is the culmination of
+            photographer and documentary filmmaker <strong>Hildah Kathure's</strong> fifteen years of work
+            with girls and young women in Northern Kenya through the MOV Foundation.
+          </p>
+
+          <blockquote class="story__pullquote">
+            "At that moment, the photograph becomes more than a record of where she has been.
+            It becomes evidence of where she might go."
+          </blockquote>
+
+          <p>
+            More than a collection of photographs about education, this project is a visual record
+            of becoming — tracing girls from the landscapes where their journeys begin to the spaces
+            they eventually occupy as professionals. It documents what happens when education
+            opens new possibilities.
+          </p>
+
+          <p>
+            The book is divided into three sections: <em>On the Grazing Fields</em>, <em>At School</em>
+            and <em>On the Job</em> — spanning from pastoralist communities in Isiolo County to
+            boardrooms, hospitals and universities across Kenya.
+          </p>
+
+          <a href="#chapters" class="btn btn--dark" id="story-chapters-btn">
+            Read the Chapters
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       PHOTO GALLERY
+       ==================================================== -->
+  <section class="gallery" id="gallery" aria-label="Photo gallery">
+    <div class="container--wide">
+      <div class="gallery__header reveal">
+        <p class="section-label" style="justify-content:center; color:var(--clr-gold); margin-bottom:0.75rem">
+          <span style="background:var(--clr-gold);height:2px;width:32px;display:block;"></span>
+          The Gallery
+        </p>
+        <h2>Moments of<br><em class="text-gold">Transformation</em></h2>
+        <p>
+          From the grazing fields of Isiolo to graduation stages — authentic photographs
+          capturing the journeys of girls whose lives were changed by education.
+          Add your own photos below.
+        </p>
+      </div>
+
+      <!-- Upload Zone -->
+      <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload photos to the gallery">
+        <input type="file" id="upload-input" accept="image/*" multiple aria-label="Choose photos to upload">
+        <div class="upload-zone__icon" aria-hidden="true">📷</div>
+        <p class="upload-zone__text">
+          <strong>Click or drag &amp; drop</strong> to add photos to the live gallery<br>
+          <small style="color:rgba(255,255,255,0.4)">JPG, PNG, WEBP · Multiple files supported · Saved locally</small>
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery__grid" id="gallery-grid" role="list" aria-label="Photo gallery grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo lightbox" aria-modal="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox__nav lightbox__prev" id="lightbox-prev" aria-label="Previous photo">‹</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" loading="lazy">
+    <button class="lightbox__nav lightbox__next" id="lightbox-next" aria-label="Next photo">›</button>
+  </div>
+
+  <!-- Caption Modal -->
+  <div class="caption-modal-overlay" id="caption-modal" role="dialog" aria-modal="true" aria-label="Add caption">
+    <div class="caption-modal">
+      <h3>Add a Caption</h3>
+      <p>Give your photo(s) a caption or leave blank to use the filename.</p>
+      <input type="text" id="caption-input" placeholder="e.g. On the Grazing Fields — Isiolo, 2025" maxlength="100"
+        aria-label="Photo caption">
+      <div class="caption-modal__actions">
+        <button id="caption-cancel" class="btn btn--outline"
+          style="color:var(--clr-charcoal);border-color:rgba(0,0,0,0.2)">Skip</button>
+        <button id="caption-ok" class="btn btn--primary">Add to Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       BOOK CHAPTERS
+       ==================================================== -->
+  <section class="chapters" id="chapters" aria-label="Book chapters">
+    <div class="container">
+      <div class="chapters__header reveal">
+        <p class="section-label" style="justify-content:center;">The Book</p>
+        <h2>Three Acts of<br><em class="text-earth">a Woman's Journey</em></h2>
+      </div>
+
+      <div class="chapters__grid">
+        <article class="chapter-card reveal reveal-delay-1">
+          <div class="chapter-card__img-wrap">
+            <img src="assets/images/hero.jpg" alt="On the Grazing Fields — Northern Kenya landscape" loading="lazy">
+            <span class="chapter-card__number">01</span>
+          </div>
+          <div class="chapter-card__body">
+            <p class="chapter-card__tag">Part One</p>
+            <h3 class="chapter-card__title">On the Grazing Fields</h3>
+            <p class="chapter-card__text">
+              The grazing fields are not simply scenery. They represent the realities many girls
+              navigate: caring for siblings, fetching water, tending livestock and managing
+              household responsibilities while confronting poverty, drought, insecurity and
+              social expectations.
+            </p>
+            <span class="chapter-card__link">
+              Explore Chapter 01
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="chapter-card reveal reveal-delay-2">
+          <div class="chapter-card__img-wrap">
+            <img src="assets/images/students_walking.jpg" alt="At School — Northern Kenya students in uniform" loading="lazy">
+            <span class="chapter-card__number">02</span>
+          </div>
+          <div class="chapter-card__body">
+            <p class="chapter-card__tag">Part Two</p>
+            <h3 class="chapter-card__title">At School</h3>
+            <p class="chapter-card__text">
+              At school, the narrative changes. Girls begin to encounter new ideas, ask questions
+              and imagine lives beyond their immediate surroundings. A uniform is found, fees are paid
+              and a girl leaves home for boarding school — encountering a world of teachers, friends,
+              knowledge and possibility.
+            </p>
+            <span class="chapter-card__link">
+              Explore Chapter 02
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="chapter-card reveal reveal-delay-3">
+          <div class="chapter-card__img-wrap">
+            <img src="assets/images/gallery/_W1A5292.jpg" alt="On the Job — Northern Kenya women as professionals and leaders" loading="lazy">
+            <span class="chapter-card__number">03</span>
+          </div>
+          <div class="chapter-card__body">
+            <p class="chapter-card__tag">Part Three</p>
+            <h3 class="chapter-card__title">On the Job</h3>
+            <p class="chapter-card__text">
+              The book introduces women such as Dr Zeinab Guracha, CEO of Kenyatta University
+              Teaching and Referral Hospital, and Kamila Abkanu, a veterinary doctor — their journeys
+              demonstrating that the distance between grazing fields and the workplace is social,
+              economic and psychological.
+            </p>
+            <span class="chapter-card__link">
+              Explore Chapter 03
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FILMMAKER / HILDAH KATHURE
+       ==================================================== -->
+  <section class="filmmaker" id="filmmaker" aria-label="About Hildah Kathure">
+    <div class="container">
+      <div class="filmmaker__grid">
+        <div class="filmmaker__img-wrap reveal">
+          <img class="filmmaker__img" src="assets/images/hildah_kathure.jpg"
+            alt="Hildah Kathure with the photo-book She Is Rising from the North at the exhibition launch" loading="lazy">
+          <div class="filmmaker__frame" aria-hidden="true"></div>
+        </div>
+
+        <div class="filmmaker__text reveal reveal-delay-2">
+          <p class="section-label" style="color:var(--clr-gold);">The Filmmaker</p>
+          <h2>Hildah Kathure</h2>
+          <p class="filmmaker__name-sub">Photographer · Documentary Filmmaker · Advocate</p>
+
+          <p>
+            Hildah Kathure is a photographer and documentary filmmaker whose work centres on
+            education, gender and the everyday lives of communities in Northern Kenya. She has
+            spent over fifteen years building visual archives of girls' journeys — from the
+            moment a door opens to the moment a girl walks through it and never looks back.
+          </p>
+
+          <blockquote>
+            "I was not simply photographing girls, but transformation. A photograph freezes a moment,
+            but its strongest moments belong to the photographs and personal stories."
+          </blockquote>
+
+          <p>
+            Working through the <strong style="color:var(--clr-gold)">MOV Foundation</strong>, Kathure
+            has documented close to 500 girls, from graduation photographs and certificates, to the
+            moment that matters most — when a girl begins to see herself differently.
+          </p>
+
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+            <a href="#contact" class="btn btn--primary" id="filmmaker-contact-btn">
+              Collaborate
+            </a>
+            <a href="#gallery" class="btn btn--outline" id="filmmaker-gallery-btn">
+              View Her Work
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       PRESS
+       ==================================================== -->
+  <section class="press" id="press" aria-label="Press and media coverage">
+    <div class="container">
+      <div class="press__header reveal">
+        <p class="section-label" style="justify-content:center;">In the Press</p>
+        <h2>As Seen in<br><em class="text-earth">The Sunday Standard &amp; Beyond</em></h2>
+      </div>
+
+      <div class="press__grid">
+        <article class="press-card reveal reveal-delay-1">
+          <div class="press-card__img">
+            <img src="assets/images/press2.jpg" alt="The Sunday Standard magazine cover — Dreams of Africa"
+              loading="lazy">
+          </div>
+          <div class="press-card__body">
+            <p class="press-card__pub">The Sunday Standard</p>
+            <h3 class="press-card__headline">Photographs that tell a story of becoming</h3>
+            <p class="press-card__excerpt">
+              Hildah Kathure's powerful photographs document what happens when education opens new
+              possibilities for girls in Northern Kenya — from the grazing fields to the boardroom.
+            </p>
+            <p class="press-card__date">September 27, 2026</p>
+          </div>
+        </article>
+
+        <article class="press-card reveal reveal-delay-2">
+          <div class="press-card__img">
+            <img src="assets/images/press1.jpg" alt="The Standard feature — Education Works" loading="lazy">
+          </div>
+          <div class="press-card__body">
+            <p class="press-card__pub">The Standard — Books</p>
+            <h3 class="press-card__headline">When a child dares to dream bigger</h3>
+            <p class="press-card__excerpt">
+              Beyond school fees and good grades, parents can help children find their path by
+              listening, believing and giving them room to dream — that is the quiet lesson of
+              She Is Rising from the North.
+            </p>
+            <p class="press-card__date">September 27, 2026</p>
+          </div>
+        </article>
+
+        <article class="press-card reveal reveal-delay-3">
+          <div class="press-card__img">
+            <img src="assets/images/press3.jpg" alt="Book launch coverage" loading="lazy">
+          </div>
+          <div class="press-card__body">
+            <p class="press-card__pub">Standard — Parenting</p>
+            <h3 class="press-card__headline">Giving children a chance to dream bigger</h3>
+            <p class="press-card__excerpt">
+              The girl who once needed someone to believe in her becomes the woman who believes
+              in another girl. Education does not end with graduation — it begins a circle of change
+              across communities.
+            </p>
+            <p class="press-card__date">September 27, 2026</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SUPPORT / DONATE
+       ==================================================== -->
+  <section class="support" id="support" aria-label="Support the project">
+    <div class="container">
+      <div class="support__header reveal">
+        <p class="section-label" style="justify-content:center;color:var(--clr-gold);margin-bottom:0.75rem;">Ways to Give · Direct Impact</p>
+        <h2>Help a Girl<br><em class="text-gold">Rise from the North</em></h2>
+        <p class="support__subtitle">
+          Your contribution funds school fees, books, transport and accommodation for girls in
+          Northern Kenya. Every donation is a door opened, a uniform found, a future expanded.
+        </p>
+      </div>
+
+      <div class="support__grid reveal reveal-delay-1">
+        <!-- LEFT: Impact Story, Photo & Pledge Calculator -->
+        <div class="support__pledge-col">
+          <div class="support__card support__card--pledge">
+            <div class="support__visual">
+              <img src="assets/images/support_impact.jpg" 
+                   alt="Young girl smiling joyfully while studying in a Northern Kenya classroom" 
+                   class="support__img" 
+                   loading="lazy">
+              <div class="support__img-badge">
+                <span class="badge-dot"></span>
+                <span>Marsabit &amp; Samburu County</span>
+              </div>
+              <div class="support__img-caption">
+                <strong>Education Works:</strong> 500+ girls supported from primary school to university.
+              </div>
+            </div>
+
+            <div class="support__pledge-body">
+              <div class="support__impact-box" id="impact-box">
+                <div class="impact-box__icon">✨</div>
+                <div class="impact-box__text">
+                  <span class="impact-box__amount" id="impact-amount">$50 Pledge</span>
+                  <p class="impact-box__desc" id="impact-desc">Funds a complete school uniform, textbooks, stationery and personal hygiene supplies for one full term.</p>
+                </div>
+              </div>
+
+              <div class="support__amounts" role="group" aria-label="Select donation amount">
+                <button class="amount-chip" data-amount="25" type="button">$25</button>
+                <button class="amount-chip selected" data-amount="50" type="button">$50</button>
+                <button class="amount-chip" data-amount="100" type="button">$100</button>
+                <button class="amount-chip" data-amount="250" type="button">$250</button>
+                <button class="amount-chip" data-amount="custom" type="button">Custom</button>
+              </div>
+
+              <div class="support__custom-wrap" id="custom-wrap" style="display:none;">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="custom-amount" placeholder="Enter amount (USD)" min="1"
+                  class="custom-amount-input" aria-label="Custom donation amount in USD">
+              </div>
+
+              <button class="btn btn--primary btn--donate" id="donate-btn" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span id="donate-btn-text">Donate $50 Securely</span>
+              </button>
+
+              <div class="support__trust-badges">
+                <span>🔒 256-Bit Encrypted</span>
+                <span>📜 MOV Foundation 501(c)(3)</span>
+                <span>🧾 Official Receipt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Verified Payment Channels with Copy Details -->
+        <div class="support__channels-col">
+          <div class="channels-intro">
+            <h3>Verified Payment Methods</h3>
+            <p>Direct bank transfers, mobile money, PayPal, and cheques are managed with full financial accountability by the <strong>MOV Foundation</strong>.</p>
+          </div>
+
+          <div class="payment-channels-list">
+            <!-- 1. M-PESA -->
+            <div class="payment-card payment-card--mpesa">
+              <div class="payment-card__header">
+                <div class="payment-card__brand">
+                  <span class="payment-logo payment-logo--mpesa">M-PESA</span>
+                  <span class="payment-card__title">Safaricom M-Pesa</span>
+                </div>
+                <span class="payment-badge payment-badge--green">Instant Mobile Money</span>
+              </div>
+              <p class="payment-card__subtitle">Pay directly from Kenya &amp; East Africa via Lipa na M-Pesa:</p>
+              
+              <div class="payment-card__fields">
+                <div class="payment-field">
+                  <span class="payment-field__label">Business / Paybill No:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">400200</strong>
+                    <button class="copy-btn" data-copy="400200" title="Copy Paybill Number" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Account Number:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">SHERISING</strong>
+                    <button class="copy-btn" data-copy="SHERISING" title="Copy Account Reference" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Or Buy Goods Till:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">9812404</strong>
+                    <button class="copy-btn" data-copy="9812404" title="Copy Till Number" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="payment-card__footer">
+                <span>📱 Dial *334# or use M-Pesa App &bull; Select Paybill &bull; Enter Details</span>
+              </div>
+            </div>
+
+            <!-- 2. BANK TRANSFER -->
+            <div class="payment-card payment-card--bank">
+              <div class="payment-card__header">
+                <div class="payment-card__brand">
+                  <span class="payment-logo payment-logo--bank">🏦</span>
+                  <span class="payment-card__title">Bank Wire Transfer</span>
+                </div>
+                <span class="payment-badge payment-badge--gold">KES &amp; USD Accounts</span>
+              </div>
+              <p class="payment-card__subtitle">Direct electronic fund transfer from any local or international bank:</p>
+
+              <div class="payment-card__fields">
+                <div class="payment-field">
+                  <span class="payment-field__label">Bank Name:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">Equity Bank Kenya</strong>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Account Name:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">MOV Foundation</strong>
+                    <button class="copy-btn" data-copy="MOV Foundation" title="Copy Account Name" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Account Number:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">0190 2995 53993</strong>
+                    <button class="copy-btn" data-copy="0190299553993" title="Copy Account Number" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">SWIFT / BIC Code:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">EQBLKENA</strong>
+                    <button class="copy-btn" data-copy="EQBLKENA" title="Copy SWIFT Code" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Branch &amp; City:</span>
+                  <div class="payment-field__val-row">
+                    <span class="payment-field__sub">Westlands Branch, Nairobi, Kenya</span>
+                  </div>
+                </div>
+              </div>
+              <div class="payment-card__footer">
+                <span>🌍 For international transfers, reference: <em>SheRisingNorth</em></span>
+              </div>
+            </div>
+
+            <!-- 3. PAYPAL & CREDIT CARD -->
+            <div class="payment-card payment-card--paypal">
+              <div class="payment-card__header">
+                <div class="payment-card__brand">
+                  <span class="payment-logo payment-logo--paypal">PayPal</span>
+                  <span class="payment-card__title">PayPal &amp; Cards</span>
+                </div>
+                <span class="payment-badge payment-badge--blue">Worldwide Donors</span>
+              </div>
+              <p class="payment-card__subtitle">Instant online credit/debit card or PayPal account transfer:</p>
+
+              <div class="payment-card__fields">
+                <div class="payment-field">
+                  <span class="payment-field__label">PayPal Handle:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">paypal.me/MOVFoundation</strong>
+                    <a href="https://paypal.me/MOVFoundation" target="_blank" rel="noopener" class="copy-btn link-btn" title="Open PayPal">
+                      <span>Open Link ↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Direct Donation Email:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">donate@movfoundation.org</strong>
+                    <button class="copy-btn" data-copy="donate@movfoundation.org" title="Copy Email" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="payment-card__footer">
+                <span>💳 Accepts Visa, MasterCard, American Express, Discover &amp; Apple Pay</span>
+              </div>
+            </div>
+
+            <!-- 4. CHEQUE & POSTAL -->
+            <div class="payment-card payment-card--cheque">
+              <div class="payment-card__header">
+                <div class="payment-card__brand">
+                  <span class="payment-logo payment-logo--cheque">✉️</span>
+                  <span class="payment-card__title">Cheque by Mail</span>
+                </div>
+                <span class="payment-badge payment-badge--neutral">Postal / Institutional</span>
+              </div>
+              <p class="payment-card__subtitle">Mail checks, foundation grants or institutional contributions:</p>
+
+              <div class="payment-card__fields">
+                <div class="payment-field">
+                  <span class="payment-field__label">Make Payable To:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">MOV Foundation</strong>
+                    <button class="copy-btn" data-copy="MOV Foundation" title="Copy Name" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Mailing Address:</span>
+                  <div class="payment-field__val-row">
+                    <span class="payment-field__val" style="font-size:0.88rem;">MOV Foundation, P.O. Box 28491-00100, Nairobi, Kenya</span>
+                    <button class="copy-btn" data-copy="MOV Foundation, P.O. Box 28491-00100, Nairobi, Kenya" title="Copy Address" type="button">
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="payment-field">
+                  <span class="payment-field__label">Memo / Reference:</span>
+                  <div class="payment-field__val-row">
+                    <strong class="payment-field__val">She Is Rising from the North</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="payment-card__footer">
+                <span>📬 Please notify donate@movfoundation.org after mailing so we can confirm receipt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       CONTACT
+       ==================================================== -->
+  <section class="contact" id="contact" aria-label="Contact us">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <p class="section-label">Get in Touch</p>
+          <h2>Exhibitions, Partnerships &amp; Media</h2>
+          <p>
+            Whether you're a media organisation, school, NGO or individual wanting to bring
+            <em>She Is Rising from the North</em> to your community — we'd love to hear from you.
+          </p>
+          <ul class="contact__links">
+            <li><span>📍</span> Nairobi, Kenya &amp; Netherlands (MOV Foundation)</li>
+            <li><span>📧</span> <a href="mailto:info@sherisingnorth.com">info@sherisingnorth.com</a></li>
+            <li><span>📱</span> <a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp us</a></li>
+            <li><span>📸</span> <a href="https://instagram.com/sherisingnorth" target="_blank"
+                rel="noopener">@sherisingnorth on Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="contact__form reveal reveal-delay-2">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="form-name">Full Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email Address</label>
+              <input type="email" id="form-email" name="email" placeholder="you@example.com" required
+                autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="form-subject">Enquiry Type</label>
+              <select id="form-subject" name="subject">
+                <option value="">Select an option…</option>
+                <option value="exhibition">Exhibition / Event</option>
+                <option value="media">Media / Press</option>
+                <option value="partnership">NGO Partnership</option>
+                <option value="book">Order the Book</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" placeholder="Tell us how you'd like to collaborate…"
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;"
+              id="form-submit-btn">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
+            <div class="form-success" id="form-success">
+              ✅ Thank you! Your message has been received. We'll be in touch soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">She Is Rising from the North</p>
+          <p class="footer__brand-tagline">Education Works</p>
+          <p class="footer__desc">
+            A photo-book and exhibition project by Hildah Kathure, documenting the transformative
+            journeys of girls in Northern Kenya through the MOV Foundation.
+          </p>
+          <div class="footer__social" role="list" aria-label="Social media links">
+            <a href="https://instagram.com/sherisingnorth" target="_blank" rel="noopener" aria-label="Instagram"
+              role="listitem">📸</a>
+            <a href="https://twitter.com/sherisingnorth" target="_blank" rel="noopener" aria-label="Twitter / X"
+              role="listitem">🐦</a>
+            <a href="https://facebook.com/sherisingnorth" target="_blank" rel="noopener" aria-label="Facebook"
+              role="listitem">💙</a>
+            <a href="https://youtube.com/@sherisingnorth" target="_blank" rel="noopener" aria-label="YouTube"
+              role="listitem">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#chapters">The Book</a></li>
+            <li><a href="#filmmaker">About Hildah</a></li>
+            <li><a href="#press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Get Involved</p>
+          <ul class="footer__links">
+            <li><a href="#support">Donate</a></li>
+            <li><a href="#contact">Host an Exhibition</a></li>
+            <li><a href="#contact">Media &amp; Press</a></li>
+            <li><a href="#contact">Order the Book</a></li>
+            <li><a href="#contact">Partnership</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Foundation</p>
+          <ul class="footer__links">
+            <li><a href="https://movfoundation.org" target="_blank" rel="noopener">MOV Foundation</a></li>
+            <li><a href="#filmmaker">About Hildah</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="mailto:info@sherisingnorth.com">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 <a href="#">She Is Rising from the North</a> · MOV Foundation. All rights reserved.</p>
+        <p>Built with ❤️ for the girls of Northern Kenya</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
