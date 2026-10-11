@@ -118,26 +118,144 @@ a { color: inherit; text-decoration: none; }
 .text-center { text-align: center; }
 
 /* ============================================================
-   NAVIGATION
+   SITE HEADER — Unified Announcement & Navigation System
    ============================================================ */
-.nav {
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.25rem 0;
-  transition: background var(--dur-med) var(--ease-smooth),
-              padding var(--dur-med) var(--ease-smooth),
-              box-shadow var(--dur-med) var(--ease-smooth);
+  transition: transform var(--dur-med) var(--ease-smooth);
 }
 
-.nav.scrolled {
-  background: rgba(26, 14, 5, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+/* --- Announcement Bar --- */
+.announcement-bar {
+  background: linear-gradient(90deg, #180d04 0%, #291507 50%, #180d04 100%);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.22);
+  color: var(--clr-sand);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  padding: 0.45rem 0;
+  transition: max-height 0.35s var(--ease-smooth), opacity 0.25s ease, padding 0.35s ease;
+  overflow: hidden;
+  max-height: 52px;
+}
+
+.announcement-bar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.announcement-bar__content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.announcement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 168, 83, 0.15);
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  color: var(--clr-gold-light);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.announcement-badge__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clr-gold);
+  box-shadow: 0 0 6px var(--clr-gold);
+}
+
+.announcement-dates {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.78rem;
+}
+
+.announcement-dates strong {
+  color: var(--clr-gold-light);
+  font-weight: 600;
+}
+
+.announcement-dates .sep {
+  color: rgba(212, 168, 83, 0.45);
+  margin: 0 0.2rem;
+}
+
+.announcement-time {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.announcement-free {
+  color: #8ade9e;
+  font-weight: 600;
+}
+
+.announcement-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--clr-gold-light);
+  font-weight: 600;
+  font-size: 0.74rem;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 168, 83, 0.12);
+  border: 1px solid rgba(212, 168, 83, 0.28);
+  transition: all var(--dur-fast);
+  white-space: nowrap;
+}
+
+.announcement-cta:hover {
+  background: var(--clr-gold);
+  color: var(--clr-earth-deep);
+  border-color: var(--clr-gold);
+  transform: translateX(2px);
+}
+
+/* --- Main Navigation Bar --- */
+.nav {
+  position: relative;
+  width: 100%;
+  padding: 1.1rem 0;
+  background: rgba(18, 9, 3, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background var(--dur-med) var(--ease-smooth),
+              padding var(--dur-med) var(--ease-smooth),
+              box-shadow var(--dur-med) var(--ease-smooth),
+              border-color var(--dur-med) var(--ease-smooth);
+}
+
+/* Scrolled States (Collapses announcement smoothly, docks navbar cleanly) */
+.site-header.scrolled .announcement-bar {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  border-bottom: none;
+}
+
+.site-header.scrolled .nav {
   padding: 0.75rem 0;
-  box-shadow: var(--shadow-md);
+  background: rgba(18, 9, 3, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav__inner {
@@ -149,12 +267,13 @@ a { color: inherit; text-decoration: none; }
 .nav__logo {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.15;
+  text-decoration: none;
 }
 
 .nav__logo-title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-style: italic;
   color: var(--clr-white);
   letter-spacing: 0.01em;
@@ -171,7 +290,7 @@ a { color: inherit; text-decoration: none; }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.2rem;
   list-style: none;
 }
 
@@ -180,9 +299,10 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.82);
   transition: color var(--dur-fast);
   position: relative;
+  text-decoration: none;
 }
 
 .nav__links a::after {
@@ -206,12 +326,14 @@ a { color: inherit; text-decoration: none; }
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-pill);
   font-weight: 600 !important;
-  transition: background var(--dur-fast), transform var(--dur-fast);
+  box-shadow: 0 2px 10px rgba(212, 168, 83, 0.3);
+  transition: background var(--dur-fast), transform var(--dur-fast), box-shadow var(--dur-fast);
 }
 
 .nav__cta:hover {
   background: var(--clr-gold-light) !important;
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212, 168, 83, 0.45);
 }
 
 .nav__cta::after { display: none !important; }
@@ -240,11 +362,12 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .hero {
   position: relative;
-  height: 100svh;
-  min-height: 640px;
+  min-height: 100svh;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
+  padding-top: calc(105px + 2rem);
 }
 
 /* Background */
@@ -301,7 +424,7 @@ a { color: inherit; text-decoration: none; }
 /* Credential pills — top right */
 .hero__credentials {
   position: absolute;
-  top: 5.5rem;
+  top: calc(105px + 1.25rem);
   right: 2rem;
   z-index: 10;
   display: flex;
@@ -349,7 +472,8 @@ a { color: inherit; text-decoration: none; }
 .hero__content {
   position: relative;
   z-index: 5;
-  padding-bottom: clamp(3rem, 8vh, 5.5rem);
+  margin-top: auto;
+  padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
   width: 100%;
 }
 
@@ -360,7 +484,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   opacity: 0;
   animation: fadeUp 0.7s 0.3s var(--ease-smooth) forwards;
 }
@@ -389,7 +513,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-display);
   line-height: 0.95;
   margin-bottom: 1.5rem;
-  gap: 0.05em;
+  gap: 0.04em;
 }
 
 .hero__title-word {
@@ -400,7 +524,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero__title-word--1 {
-  font-size: clamp(3.2rem, 8.5vw, 7.5rem);
+  font-size: clamp(2.7rem, 6.8vw, 6.2rem);
   font-weight: 400;
   color: var(--clr-white);
   letter-spacing: -0.01em;
@@ -408,7 +532,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero__title-word--2 {
-  font-size: clamp(4rem, 11vw, 10rem);
+  font-size: clamp(3.5rem, 9.2vw, 8.5rem);
   animation: titleSlide 0.9s 0.7s var(--ease-smooth) forwards;
 }
 
@@ -420,7 +544,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero__title-word--3 {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 6.5vw, 5.8rem);
   display: flex;
   align-items: baseline;
   gap: 0.3em;
@@ -3095,6 +3219,26 @@ a { color: inherit; text-decoration: none; }
   .story__img-accent { display: none; }
   
   .payment-card { padding: 1.1rem; }
+
+  /* Header & Announcement mobile */
+  .announcement-bar {
+    max-height: 90px;
+    padding: 0.4rem 0;
+  }
+  .announcement-bar__container {
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .announcement-bar__content {
+    justify-content: center;
+    font-size: 0.74rem;
+  }
+  .announcement-cta {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.6rem;
+  }
 
   /* Footer mobile */
   .footer__bottom-row {

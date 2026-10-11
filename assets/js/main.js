@@ -42,6 +42,7 @@ window.SITE_CONFIG = {
 /* ----------------------------------------------------------
    1. NAVIGATION — scroll-aware + mobile menu
    ---------------------------------------------------------- */
+const siteHeader = document.getElementById('site-header');
 const nav = document.getElementById('nav');
 const hamburger = document.getElementById('nav-hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -49,7 +50,9 @@ const mobileClose = document.getElementById('mobile-menu-close');
 const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
 window.addEventListener('scroll', () => {
-  nav?.classList.toggle('scrolled', window.scrollY > 60);
+  const isScrolled = window.scrollY > 40;
+  siteHeader?.classList.toggle('scrolled', isScrolled);
+  nav?.classList.toggle('scrolled', isScrolled);
 }, { passive: true });
 
 hamburger?.addEventListener('click', () => mobileMenu?.classList.add('open'));

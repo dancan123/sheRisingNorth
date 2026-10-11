@@ -33,40 +33,61 @@
 <body>
 
   <!-- ====================================================
-       TOP ANNOUNCEMENT BAR
+       SITE HEADER — Unified Announcement & Navigation
        ==================================================== -->
-  <aside class="announcement-bar" role="banner" aria-label="Tour dates announcement" style="background:#2d1a0a;color:#d4a853;text-align:center;padding:0.6rem 1rem;font-size:0.88rem;font-weight:600;letter-spacing:0.03em;border-bottom:1px solid rgba(212,168,83,0.3);">
-    <span>📍 <strong>Exhibition Tour 2026:</strong> Nairobi (20 Sep) &bull; Isiolo (24 Sep) &bull; Merti (28 Sep) &bull; 2:00 &ndash; 5:00 PM &bull; Free Entry</span>
-    <a href="#tour" style="color:#ffffff;text-decoration:underline;margin-left:0.75rem;font-weight:700;">View Tour Schedule &rarr;</a>
-  </aside>
-
-  <!-- ====================================================
-       NAVIGATION
-       ==================================================== -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav__inner">
-        <a href="#hero" class="nav__logo" aria-label="She Is Rising from the North — Home">
-          <span class="nav__logo-title">She Is Rising from the North</span>
-          <span class="nav__logo-sub">Education Works &bull; MOV Foundation</span>
+  <header class="site-header" id="site-header" role="banner">
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar" role="complementary" aria-label="Tour dates announcement">
+      <div class="container announcement-bar__container">
+        <div class="announcement-bar__content">
+          <span class="announcement-badge">
+            <span class="announcement-badge__dot" aria-hidden="true"></span>
+            Exhibition Tour 2026
+          </span>
+          <span class="announcement-dates">
+            <strong>Nairobi</strong> (20 Sep) <span class="sep">&bull;</span>
+            <strong>Isiolo</strong> (24 Sep) <span class="sep">&bull;</span>
+            <strong>Merti</strong> (28 Sep) <span class="sep">&bull;</span>
+            <span class="announcement-time">2:00 &ndash; 5:00 PM</span> <span class="sep">&bull;</span>
+            <span class="announcement-free">Free Entry</span>
+          </span>
+        </div>
+        <a href="#tour" class="announcement-cta" id="announcement-tour-link">
+          <span>View Tour Schedule</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </a>
-
-        <ul class="nav__links" role="list">
-          <li><a href="#story">The Story</a></li>
-          <li><a href="#chapters">The Book</a></li>
-          <li><a href="#voices">Voices</a></li>
-          <li><a href="#tour">Tour Dates</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#press">Press Release</a></li>
-          <li><a href="#support" class="nav__cta">Bank Details</a></li>
-        </ul>
-
-        <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </div>
-  </nav>
+
+    <!-- Main Navigation Bar -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="#hero" class="nav__logo" aria-label="She Is Rising from the North — Home">
+            <span class="nav__logo-title">She Is Rising from the North</span>
+            <span class="nav__logo-sub">Education Works &bull; MOV Foundation</span>
+          </a>
+
+          <ul class="nav__links" role="list">
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#chapters">The Book</a></li>
+            <li><a href="#voices">Voices</a></li>
+            <li><a href="#tour">Tour Dates</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#press">Press Release</a></li>
+            <li><a href="#support" class="nav__cta">Bank Details</a></li>
+          </ul>
+
+          <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
