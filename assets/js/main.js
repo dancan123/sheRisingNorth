@@ -209,13 +209,7 @@ const defaultPhotos = [
     "category": "portraits",
     "tag": "Resilience"
   },
-  {
-    "id": "photo-11",
-    "src": "assets/images/Bank Details .jpeg",
-    "caption": "Official KCB Bank & Till Banking Credentials — She Rises From The North Mentorship",
-    "category": "banking",
-    "tag": "Banking Slip"
-  },
+
   {
     "id": "photo-12",
     "src": "assets/images/IMG-20230220-WA0064.jpg",
