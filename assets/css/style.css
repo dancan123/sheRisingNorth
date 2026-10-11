@@ -381,7 +381,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 45%;
   transform: scale(1.06);
   animation: heroZoom 16s ease-out forwards;
 }
