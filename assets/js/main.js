@@ -13,38 +13,29 @@
  */
 window.SITE_CONFIG = {
   mpesa: {
-    paybill: '400200',
-    account: 'SHERISING',
-    till: '9812404'
+    paybill: '522533',
+    account: '8144533',
+    till: '8144533',
+    name: 'SHE RISES FROM THE NORTH MENTORSHIP'
   },
   bank: {
-    name: 'Equity Bank Kenya',
-    accountName: 'MOV Foundation',
-    accountNumber: '0190 2995 53993',
-    swift: 'EQBLKENA',
-    branch: 'Westlands Branch, Nairobi, Kenya'
+    name: 'KCB Bank Kenya',
+    accountName: 'SHE RISES FROM THE NORTH MENTORSHIP',
+    till: '8144533',
+    paybill: '522533',
+    ussd: '*522#'
   },
-  paypal: {
-    url: 'https://paypal.me/MOVFoundation',
-    email: 'donate@movfoundation.org'
+  contact: {
+    author: 'Hildah Kathure',
+    company: 'Kalmax Productions, Nairobi',
+    phone: '0720280171',
+    email: 'hildahk83@gmail.com',
+    website: 'https://www.kalmaxproductions.com',
+    movFoundation: 'http://www.stichtingmov.nl'
   },
-  cheque: {
-    payableTo: 'MOV Foundation',
-    address: 'MOV Foundation, P.O. Box 28491-00100, Nairobi, Kenya',
-    memo: 'She Is Rising from the North'
-  },
-
-  /**
-   * Action hook when user clicks "Donate Securely"
-   * Replace or extend this to trigger your live payment gateway / checkout.
-   */
   onDonate: function(amount) {
     console.log(`[Donation Triggered] Amount: ${amount}`);
-    showToast(`Redirecting to secure payment for $${amount}...`, 'info');
-    // Open PayPal or your payment gateway:
-    setTimeout(() => {
-      window.open(`https://paypal.me/MOVFoundation/${amount}USD`, '_blank');
-    }, 600);
+    showToast(`To complete your pledge of $${amount}, use KCB Paybill 522533 (Acc: 8144533) or Till 8144533.`, 'info');
   }
 };
 
@@ -144,1640 +135,646 @@ function escapeHtml(str) {
    5. COMPLETE EXHIBITION GALLERY SYSTEM
    ---------------------------------------------------------- */
 
-const GALLERY_KEY = 'sirn_gallery_photos_v10';
+const GALLERY_KEY = 'sirn_gallery_photos_v12';
 
 // Built-in master collection of all 233 photos from Northern Kenya
 const defaultPhotos = [
   {
-    "id": "hl-1",
+    "id": "photo-1",
+    "src": "assets/images/Dr. Zeinab Gura - CEO Kenya University TRR Hospital Nairobi.jpg",
+    "caption": "Dr. Zeinab Gura — CEO Kenyatta University Teaching, Referral & Research Hospital",
+    "category": "portraits",
+    "tag": "Leadership"
+  },
+  {
+    "id": "photo-2",
+    "src": "assets/images/Dr. Zeinab Gura - CEO Kenya University TRR Hospital Nairobi (1).jpg",
+    "caption": "Dr. Zeinab Gura — Executive Portrait & Mentor to Northern Kenyan Girls",
+    "category": "portraits",
+    "tag": "Leadership"
+  },
+  {
+    "id": "photo-3",
+    "src": "assets/images/Dr. Zeinab Gura - CEO Kenya University TRR Hospital Nairobi (2).jpg",
+    "caption": "Dr. Zeinab Gura — Leadership in Healthcare & Community Advocacy",
+    "category": "portraits",
+    "tag": "Leadership"
+  },
+  {
+    "id": "photo-4",
+    "src": "assets/images/Batula Fayo a teacher at Kisima Primary School.jpg",
+    "caption": "Batula Fayo — Teacher at Kisima Primary School, Isiolo County",
+    "category": "portraits",
+    "tag": "Educator"
+  },
+  {
+    "id": "photo-5",
+    "src": "assets/images/A girl at Kisima - writing the future.jpg",
+    "caption": "A Girl at Kisima — Writing the Future with Dignity and Determination",
+    "category": "school",
+    "tag": "Education"
+  },
+  {
+    "id": "photo-6",
+    "src": "assets/images/Amintu Gollo protects and serves determined that no girl facing violence should stand alone.jpg",
+    "caption": "Amintu Gollo Protects and Serves — Determined that No Girl Facing Violence Stands Alone",
+    "category": "job",
+    "tag": "Public Service"
+  },
+  {
+    "id": "photo-7",
+    "src": "assets/images/Kaltuma Abdi and her Daughter Amina Abdi- One generation nurturing the dreams of the next.jpg",
+    "caption": "Kaltuma Abdi & Daughter Amina Abdi — One Generation Nurturing the Dreams of the Next",
+    "category": "portraits",
+    "tag": "Generations"
+  },
+  {
+    "id": "photo-8",
+    "src": "assets/images/Sponsored Girls in Isiolo Girls - Ready to learn, lead and be seen.jpg",
+    "caption": "Sponsored Girls at Isiolo Girls Secondary — Ready to Learn, Lead and Be Seen",
+    "category": "school",
+    "tag": "Scholars"
+  },
+  {
+    "id": "photo-9",
+    "src": "assets/images/Amina Jaldesa 4.jpeg",
+    "caption": "Amina Jaldesa — Community Leadership & Mentorship in Northern Kenya",
+    "category": "portraits",
+    "tag": "Mentor"
+  },
+  {
+    "id": "photo-10",
+    "src": "assets/images/Boke 2.jpeg",
+    "caption": "Boke — Stories of Resilience, Courage and Transformation",
+    "category": "portraits",
+    "tag": "Resilience"
+  },
+  {
+    "id": "photo-11",
+    "src": "assets/images/Bank Details .jpeg",
+    "caption": "Official KCB Bank & Till Banking Credentials — She Rises From The North Mentorship",
+    "category": "banking",
+    "tag": "Banking Slip"
+  },
+  {
+    "id": "photo-12",
+    "src": "assets/images/IMG-20230220-WA0064.jpg",
+    "caption": "Classroom Mentorship Session — MOV Foundation Scholars in Northern Kenya",
+    "category": "school",
+    "tag": "Mentorship"
+  },
+  {
+    "id": "photo-13",
     "src": "assets/images/photobooth_students.jpg",
-    "caption": "#SheIsRisingFromTheNorth Photo Booth \u2014 Students & Teachers with the Book",
-    "category": "photobooth",
-    "tag": "Featured"
+    "caption": "#SheIsRisingFromTheNorth Photo Booth — Students & Teachers with the Book",
+    "category": "launch",
+    "tag": "Celebration"
   },
   {
-    "id": "hl-2",
+    "id": "photo-14",
     "src": "assets/images/students_reading.jpg",
-    "caption": "Reading the Book \u2014 I.G.H.S. Students Exploring Their Stories",
-    "category": "exhibition",
-    "tag": "Featured"
+    "caption": "Reading the Book — I.G.H.S. Students Exploring Their Stories",
+    "category": "school",
+    "tag": "Students"
   },
   {
-    "id": "hl-3",
+    "id": "photo-15",
     "src": "assets/images/students_walking.jpg",
-    "caption": "The Journey of Becoming \u2014 Students in Uniform at the Launch",
-    "category": "exhibition",
-    "tag": "Featured"
+    "caption": "The Journey of Becoming — Students in Uniform at the Launch",
+    "category": "school",
+    "tag": "Students"
   },
   {
-    "id": "hl-4",
+    "id": "photo-16",
     "src": "assets/images/exhibition_outdoor.jpg",
-    "caption": "Outdoor Exhibition Under the Acacia \u2014 Photo Prints on Easels",
-    "category": "exhibition",
-    "tag": "Featured"
+    "caption": "Outdoor Exhibition Under the Acacia — Photo Prints on Easels",
+    "category": "launch",
+    "tag": "Exhibition"
   },
   {
-    "id": "hl-5",
+    "id": "photo-17",
     "src": "assets/images/classroom.jpg",
-    "caption": "Inside the Classroom \u2014 Where Futures Are Built",
-    "category": "exhibition",
-    "tag": "Featured"
+    "caption": "Inside the Classroom — Where Futures Are Built",
+    "category": "school",
+    "tag": "Classroom"
   },
   {
-    "id": "hl-6",
+    "id": "photo-18",
     "src": "assets/images/support_impact.jpg",
-    "caption": "Education Changes Everything \u2014 Support the Girls of Northern Kenya",
-    "category": "exhibition",
-    "tag": "Featured"
+    "caption": "Education Changes Everything — Support the Girls of Northern Kenya",
+    "category": "school",
+    "tag": "Impact"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5212.jpg",
-    "caption": "Exhibition Gallery Pavilion \u2014 Desert Sunset and Stories of Hope",
-    "category": "exhibition",
-    "num": 5212
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5213.jpg",
-    "caption": "Inside the Exhibition Tent \u2014 15 Years of Documentary Photography",
-    "category": "exhibition",
-    "num": 5213
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5219.jpg",
-    "caption": "Opening Ceremony \u2014 Community Leaders & Guests of Honour",
-    "category": "exhibition",
-    "num": 5219
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5220.jpg",
-    "caption": "Viewing the Photo-Book \u2014 A Moment of Recognition",
-    "category": "exhibition",
-    "num": 5220
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5223.jpg",
-    "caption": "School Girls at the Exhibition \u2014 Northern Kenya",
-    "category": "exhibition",
-    "num": 5223
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5224.jpg",
-    "caption": "The Long Road \u2014 From Grazing Fields to Classrooms",
-    "category": "exhibition",
-    "num": 5224
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5227.jpg",
-    "caption": "Portrait of Resilience \u2014 She Is Rising from the North",
-    "category": "exhibition",
-    "num": 5227
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5230.jpg",
-    "caption": "Framed Portraits of Resilience \u2014 Community Exhibition",
-    "category": "exhibition",
-    "num": 5230
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5235.jpg",
-    "caption": "MOV Foundation Supporters at the Launch Event",
-    "category": "exhibition",
-    "num": 5235
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5237.jpg",
-    "caption": "A Girl Reads Her Own Story \u2014 Isiolo, Kenya",
-    "category": "exhibition",
-    "num": 5237
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5238.jpg",
-    "caption": "Teachers and Students Celebrate 15 Years of Education",
-    "category": "exhibition",
-    "num": 5238
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5240.jpg",
-    "caption": "Community Elder Signing the Official Exhibition Guestbook",
-    "category": "exhibition",
-    "num": 5240
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5244.jpg",
-    "caption": "Fifteen Years \u2014 Five Hundred Girls Documented",
-    "category": "exhibition",
-    "num": 5244
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5251.jpg",
-    "caption": "Young Women Graduates \u2014 Education Works",
-    "category": "exhibition",
-    "num": 5251
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5259.jpg",
-    "caption": "Smiles of Achievement \u2014 Graduation Day, Northern Kenya",
-    "category": "exhibition",
-    "num": 5259
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5262.jpg",
-    "caption": "Uniform as Dignity \u2014 First Day in Secondary School",
-    "category": "exhibition",
-    "num": 5262
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5263.jpg",
-    "caption": "Book in Hands \u2014 Knowledge is Power",
-    "category": "exhibition",
-    "num": 5263
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5266.jpg",
-    "caption": "Stichting MOV Delegation Signing the Exhibition Launch Record",
-    "category": "exhibition",
-    "num": 5266
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5269.jpg",
-    "caption": "Conversations That Change Lives \u2014 Mentorship Moments",
-    "category": "exhibition",
-    "num": 5269
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5273.jpg",
-    "caption": "Community Gathering \u2014 Education Advocates and Parents",
-    "category": "exhibition",
-    "num": 5273
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5277.jpg",
-    "caption": "Looking Forward \u2014 The Next Generation of Leaders",
-    "category": "exhibition",
-    "num": 5277
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5279.jpg",
-    "caption": "The Journey Continues \u2014 Students on the Road to University",
-    "category": "exhibition",
-    "num": 5279
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5290.jpg",
-    "caption": "Exhibition Prints \u2014 Stories Told in Photographs",
-    "category": "exhibition",
-    "num": 5290
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5292.jpg",
-    "caption": "Breaking the Vicious Cycle \u2014 Photo-Book Open Pages",
-    "category": "exhibition",
-    "num": 5292
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5295.jpg",
-    "caption": "A Proud Moment \u2014 Parent and Child at the Exhibition",
-    "category": "exhibition",
-    "num": 5295
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5297.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5297
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5298.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5298
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5299.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5299
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5300.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5300
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5303.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5303
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5305.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5305
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5307.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5307
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5309.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5309
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5310.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5310
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5311.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5311
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5314.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5314
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5320.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5320
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5321.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5321
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5322.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5322
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5326.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5326
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5329.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5329
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5335.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5335
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5336.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5336
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5345.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5345
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5346.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5346
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5348.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5348
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5350.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5350
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5351.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5351
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5355.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5355
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5358.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "exhibition",
-    "num": 5358
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5361.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5361
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5366.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5366
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5367.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5367
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5368.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5368
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5369.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5369
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5371.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5371
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5375.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5375
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5376.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5376
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5380.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5380
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5384.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5384
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5385.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5385
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5386.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5386
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5387.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5387
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5389.jpg",
-    "caption": "Photo Booth Joy \u2014 Students Celebrating Together",
-    "category": "photobooth",
-    "num": 5389
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5391.jpg",
-    "caption": "Photo Booth Portrait \u2014 She Is Rising from the North",
-    "category": "photobooth",
-    "num": 5391
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5392.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5392
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5396.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5396
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5401.jpg",
-    "caption": "Smiles and Sisterhood at the Book Launch",
-    "category": "photobooth",
-    "num": 5401
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5402.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5402
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5403.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5403
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5407.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5407
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5409.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5409
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5412.jpg",
-    "caption": "Community Celebrations at the Photo Booth",
-    "category": "photobooth",
-    "num": 5412
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5413.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5413
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5416.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5416
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5417.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5417
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5420.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5420
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5425.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5425
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5426.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5426
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5427.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5427
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5430.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "photobooth",
-    "num": 5430
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5433.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5433
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5436.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5436
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5437.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5437
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5439.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5439
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5442.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5442
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5443.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5443
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5446.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5446
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5448.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5448
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5451.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5451
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5453.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5453
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5454.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5454
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5455.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5455
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5456.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5456
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5459.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5459
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5461.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5461
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5469.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5469
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5470.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5470
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5478.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5478
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5479.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5479
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5480.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5480
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5483.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5483
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5484.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5484
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5489.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5489
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5491.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5491
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5496.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5496
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5497.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5497
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5504.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5504
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5508.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5508
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5518.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5518
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5525.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5525
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5527.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5527
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5532.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5532
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5536.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5536
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5539.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5539
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5544.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5544
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5546.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5546
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5551.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5551
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5554.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5554
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5561.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5561
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5568.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5568
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5569.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5569
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5570.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5570
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5573.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5573
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5574.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5574
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5578.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5578
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5581.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5581
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5584.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5584
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5587.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5587
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5594.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5594
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5595.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5595
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5597.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5597
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5599.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5599
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5601.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5601
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5602.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5602
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5603.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5603
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5604.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5604
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5607.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5607
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5609.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5609
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5611.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5611
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5612.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5612
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5616.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5616
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5619.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5619
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5621.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5621
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5623.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5623
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5625.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5625
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5627.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5627
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5628.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5628
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5629.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5629
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5631.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5631
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5632.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5632
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5633.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5633
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5636.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5636
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5637.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5637
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5638.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5638
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5639.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5639
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5640.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5640
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5643.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5643
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5645.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5645
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5647.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5647
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5648.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5648
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5650.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5650
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5653.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5653
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5665.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5665
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5669.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5669
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5671.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5671
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5674.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "ceremony",
-    "num": 5674
-  },
-  {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5700.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-19",
+    "src": "assets/images/hildah_kathure.jpg",
+    "caption": "Hildah Kathure — Author, Photographer & MOV Liaison Officer",
     "category": "portraits",
-    "num": 5700
+    "tag": "Author"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5702.jpg",
-    "caption": "Hildah Kathure, MOV Foundation Founder & Team with the Book",
-    "category": "portraits",
-    "num": 5702
+    "id": "photo-20",
+    "src": "assets/images/MDV-2.jpg",
+    "caption": "On the Grazing Fields — Dawn Across the Northern Kenya Savanna",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5704.jpg",
-    "caption": "Launch Celebration \u2014 Team & Community Under the Acacia",
-    "category": "portraits",
-    "num": 5704
+    "id": "photo-21",
+    "src": "assets/images/MDV-3.jpg",
+    "caption": "Tending Livestock — Early Morning Pastoralist Responsibilities",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5706.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5706
+    "id": "photo-22",
+    "src": "assets/images/MDV-4.jpg",
+    "caption": "The Journey Begins — Crossing the Savanna Towards School",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5707.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5707
+    "id": "photo-23",
+    "src": "assets/images/MDV-5.jpg",
+    "caption": "Water and Resilience — Everyday Realities in Northern Kenya",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5709.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5709
+    "id": "photo-24",
+    "src": "assets/images/MDV-6.jpg",
+    "caption": "Pastoralist Heritage — Communities Across Isiolo and Samburu",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5710.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5710
+    "id": "photo-25",
+    "src": "assets/images/MDV-10.jpg",
+    "caption": "Gathering at the Manyatta — Community Elders and Youth Dialogue",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5712.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-26",
+    "src": "assets/images/MDV-11.jpg",
+    "caption": "Generational Wisdom — Elders Supporting Girls' Education",
     "category": "portraits",
-    "num": 5712
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5713.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5713
+    "id": "photo-27",
+    "src": "assets/images/MDV-13.jpg",
+    "caption": "Dusk on the Northern Plains — Vast Savanna Horizons",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5715.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5715
+    "id": "photo-28",
+    "src": "assets/images/MDV-14.jpg",
+    "caption": "The Long Walk to School — Breaking Distance Barriers",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5718.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5718
+    "id": "photo-29",
+    "src": "assets/images/MDV-16.jpg",
+    "caption": "Classroom in Session — Dedicated Students Focused on Learning",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5720.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5720
+    "id": "photo-30",
+    "src": "assets/images/MDV-17.jpg",
+    "caption": "Writing Dreams — A Desk and Notebook of One's Own",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5721.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5721
+    "id": "photo-31",
+    "src": "assets/images/MDV-18.jpg",
+    "caption": "Peer Learning — Study Circles Under the Trees",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5722.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5722
+    "id": "photo-32",
+    "src": "assets/images/MDV-20.jpg",
+    "caption": "Morning Assembly — Standing Proud in Clean School Uniforms",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5723.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5723
+    "id": "photo-33",
+    "src": "assets/images/MDV-22.jpg",
+    "caption": "Primary School Joy — Friends and Shared Academic Aspirations",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5724.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5724
+    "id": "photo-34",
+    "src": "assets/images/MDV-25.jpg",
+    "caption": "Mentorship in Action — Alumnae Inspiring Younger Girls",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5727.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5727
+    "id": "photo-35",
+    "src": "assets/images/MDV-27.jpg",
+    "caption": "Library Hours — Discovering New Worlds Through Books",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5729.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5729
+    "id": "photo-36",
+    "src": "assets/images/MDV-29.jpg",
+    "caption": "Science & Curiosity — Exploring Biology in the School Lab",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5731.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5731
+    "id": "photo-37",
+    "src": "assets/images/MDV-30.jpg",
+    "caption": "Breaking Barriers — From Traditional Grazing to High School Success",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5733.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5733
+    "id": "photo-38",
+    "src": "assets/images/MDV-31.jpg",
+    "caption": "Sisterhood & Strength — Young Women Supporting Each Other",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5735.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5735
+    "id": "photo-39",
+    "src": "assets/images/MDV-33.jpg",
+    "caption": "Graduation Aspirations — Preparing Diligently for National Exams",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5737.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-40",
+    "src": "assets/images/MDV-35.jpg",
+    "caption": "Educators Who Care — Teachers Guiding Students in Isiolo",
     "category": "portraits",
-    "num": 5737
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5739.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5739
+    "id": "photo-41",
+    "src": "assets/images/MDV-39.jpg",
+    "caption": "Dignity in Education — The Transformative Power of Scholarships",
+    "category": "school",
+    "tag": "School"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5741.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-42",
+    "src": "assets/images/MDV-40.jpg",
+    "caption": "Community Pride — Parents Celebrating Academic Progress",
     "category": "portraits",
-    "num": 5741
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5743.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-43",
+    "src": "assets/images/MDV-42.jpg",
+    "caption": "Voices of Courage — Speaking Up in Classrooms and Community Halls",
     "category": "portraits",
-    "num": 5743
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5746.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-44",
+    "src": "assets/images/MDV-43.jpg",
+    "caption": "Future Leaders — Young Northern Kenyan Women Stepping Forward",
     "category": "portraits",
-    "num": 5746
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5749.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5749
+    "id": "photo-45",
+    "src": "assets/images/MDV-45.jpg",
+    "caption": "The Horizon of Possibility — Northern Kenya Savanna Sunset",
+    "category": "grazing",
+    "tag": "Grazing Fields"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5752.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5752
+    "id": "photo-46",
+    "src": "assets/images/0O1A1925.jpg",
+    "caption": "On the Grazing Fields — Dawn Light in Isiolo County",
+    "category": "grazing",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5754.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-47",
+    "src": "assets/images/0O1A1927.jpg",
+    "caption": "Portrait of Grace — Young Pastoralist Girl at Sunrise",
     "category": "portraits",
-    "num": 5754
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5755.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-48",
+    "src": "assets/images/0O1A1990.jpg",
+    "caption": "Pastoralist Traditions — Samburu Beadwork and Living Culture",
     "category": "portraits",
-    "num": 5755
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5760.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5760
+    "id": "photo-49",
+    "src": "assets/images/0O1A2340.jpg",
+    "caption": "Daily Responsibilities — Fetching Water Across the Savanna",
+    "category": "grazing",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5761.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5761
+    "id": "photo-50",
+    "src": "assets/images/0O1A8106.jpg",
+    "caption": "Arriving at Secondary School — The First Step to Freedom",
+    "category": "school",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5765.jpg",
-    "caption": "Hildah Kathure with Microphone & Team \u2014 Outdoor Celebration",
-    "category": "portraits",
-    "num": 5765
+    "id": "photo-51",
+    "src": "assets/images/0O1A8163.jpg",
+    "caption": "In the Classroom — Deep Focus and Academic Concentration",
+    "category": "school",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5767.jpg",
-    "caption": "MOV Foundation Leadership & Community Champions",
-    "category": "portraits",
-    "num": 5767
+    "id": "photo-52",
+    "src": "assets/images/0O1A8203.jpg",
+    "caption": "Sharing Coursework — Students Collaborating at Isiolo Girls",
+    "category": "school",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5769.jpg",
-    "caption": "Hildah Kathure and Education Partner \u2014 A Milestone Celebrated",
+    "id": "photo-53",
+    "src": "assets/images/0O1A8311.jpg",
+    "caption": "Portrait of Determination — An Aspiring Medical Doctor in Uniform",
     "category": "portraits",
-    "num": 5769
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5772.jpg",
-    "caption": "Women Leaders of Northern Kenya \u2014 Education Works",
-    "category": "portraits",
-    "num": 5772
+    "id": "photo-54",
+    "src": "assets/images/0O1A8318.jpg",
+    "caption": "Classroom Discussion — Finding Confidence and Purpose",
+    "category": "school",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5774.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5774
+    "id": "photo-55",
+    "src": "assets/images/0O1A8340.jpg",
+    "caption": "Courtyard Gathering — Girls Between Lessons in School",
+    "category": "school",
+    "tag": "Field Story"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5776.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5776
+    "id": "photo-56",
+    "src": "assets/images/_32A8149.jpg",
+    "caption": "Professional Leadership — Women Shaping Northern Kenya's Future",
+    "category": "job",
+    "tag": "Leadership"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5777.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5777
+    "id": "photo-57",
+    "src": "assets/images/_32A8150.jpg",
+    "caption": "Mentorship in Practice — Guiding Students Towards University",
+    "category": "job",
+    "tag": "Leadership"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5778.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5778
+    "id": "photo-58",
+    "src": "assets/images/_32A8158.jpg",
+    "caption": "Community Advocacy — Standing Up for Every Girl's Right to Learn",
+    "category": "job",
+    "tag": "Leadership"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5781.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5781
+    "id": "photo-59",
+    "src": "assets/images/_W1A0004.jpg",
+    "caption": "Morning Light on the School Quadrangle — Northern Kenya",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5782.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-60",
+    "src": "assets/images/_W1A0034.jpg",
+    "caption": "Dignity and Hope — A Student's Inspiring Smile",
     "category": "portraits",
-    "num": 5782
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5784.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5784
+    "id": "photo-61",
+    "src": "assets/images/_W1A0072.jpg",
+    "caption": "Science Laboratory — Hands-on STEM Discovery",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5785.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5785
+    "id": "photo-62",
+    "src": "assets/images/_W1A0097.jpg",
+    "caption": "Boarding School Community — Safe Spaces for Girls to Excel",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5787.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5787
+    "id": "photo-63",
+    "src": "assets/images/_W1A0120.jpg",
+    "caption": "Classroom Discussion — Active Learning and Discussion",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5789.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-64",
+    "src": "assets/images/_W1A0126.jpg",
+    "caption": "Portrait of an Aspiring Engineer — Isiolo Girls High School",
     "category": "portraits",
-    "num": 5789
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5790.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5790
+    "id": "photo-65",
+    "src": "assets/images/_W1A0154.jpg",
+    "caption": "Study Hall Focus — Dedicated Hours Before National Exams",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5791.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-66",
+    "src": "assets/images/_W1A0184.jpg",
+    "caption": "Eyes on the Horizon — Focused on Achieving Top Grades",
     "category": "portraits",
-    "num": 5791
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5793.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5793
+    "id": "photo-67",
+    "src": "assets/images/_W1A0212.jpg",
+    "caption": "Study Group — Supporting Each Other Towards Graduation",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5796.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5796
+    "id": "photo-68",
+    "src": "assets/images/_W1A0234.jpg",
+    "caption": "School Grounds — Friendship and High Ambition",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5798.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5798
+    "id": "photo-69",
+    "src": "assets/images/_W1A0290.jpg",
+    "caption": "Sports and Leadership — Health, Teamwork and Confidence",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5800.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5800
+    "id": "photo-70",
+    "src": "assets/images/_W1A0316.jpg",
+    "caption": "Engaging with the Curriculum — Curiosity and Learning",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5802.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5802
+    "id": "photo-71",
+    "src": "assets/images/_W1A0351.jpg",
+    "caption": "Teacher Mentoring Students — After-Class Academic Guidance",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5804.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-72",
+    "src": "assets/images/_W1A0363.jpg",
+    "caption": "Portrait of Hope — Student in Uniform at Isiolo Girls",
     "category": "portraits",
-    "num": 5804
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5808.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
-    "category": "portraits",
-    "num": 5808
+    "id": "photo-73",
+    "src": "assets/images/_W1A0372.jpg",
+    "caption": "School Assembly — Hundreds of Bright Futures in Progress",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5810.jpg",
-    "caption": "Photo Booth Celebration Under the Northern Kenya Sky",
+    "id": "photo-74",
+    "src": "assets/images/_W1A0391.jpg",
+    "caption": "Joy and Resilience — Overcoming Challenges Through Education",
     "category": "portraits",
-    "num": 5810
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5811.jpg",
-    "caption": "Hildah Kathure & Education Champions with Photo Booth Frame",
-    "category": "portraits",
-    "num": 5811
+    "id": "photo-75",
+    "src": "assets/images/_W1A0397.jpg",
+    "caption": "Writing in the Notebook — An Archive of Education",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5813.jpg",
-    "caption": "She Is Rising from the North \u2014 Exhibition Frame #1",
+    "id": "photo-76",
+    "src": "assets/images/_W1A0410.jpg",
+    "caption": "Portrait of an Achiever — High School Graduate",
     "category": "portraits",
-    "num": 5813
+    "tag": "Portrait"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5815.jpg",
-    "caption": "Hildah Kathure & Community Partner at the Exhibition",
-    "category": "portraits",
-    "num": 5815
+    "id": "photo-77",
+    "src": "assets/images/_W1A0413.jpg",
+    "caption": "Mentorship Session in the Hall — Inspiring the Whole Cohort",
+    "category": "school",
+    "tag": "Isiolo Girls"
   },
   {
-    "id": "photo-1",
-    "src": "assets/images/gallery/_W1A5817.jpg",
-    "caption": "Closing Moments \u2014 Celebrating 15 Years of Transformation",
+    "id": "photo-78",
+    "src": "assets/images/_W1A0417.jpg",
+    "caption": "Quiet Reflection with the Book — She Is Rising from the North",
+    "category": "school",
+    "tag": "Isiolo Girls"
+  },
+  {
+    "id": "photo-79",
+    "src": "assets/images/_W1A0469.jpg",
+    "caption": "Ready for the World — Final Year Students in Isiolo",
+    "category": "school",
+    "tag": "Isiolo Girls"
+  },
+  {
+    "id": "photo-80",
+    "src": "assets/images/_W1A8936.jpg",
+    "caption": "Golden Hour Across the Pastoralist Plains of Northern Kenya",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-81",
+    "src": "assets/images/_W1A8986.jpg",
+    "caption": "The Road Between Manyattas — The Vast Northern Frontier",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-82",
+    "src": "assets/images/_W1A9043.jpg",
+    "caption": "Livestock and Livelihoods — Pastoralist Realities in Isiolo",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-83",
+    "src": "assets/images/_W1A9701.jpg",
+    "caption": "Samburu Traditional Attire — Celebrating Heritage and Dignity",
     "category": "portraits",
-    "num": 5817
+    "tag": "Portrait"
+  },
+  {
+    "id": "photo-84",
+    "src": "assets/images/_W1A9733.jpg",
+    "caption": "A Mother's Pride — Supporting Her Daughter's Journey",
+    "category": "portraits",
+    "tag": "Portrait"
+  },
+  {
+    "id": "photo-85",
+    "src": "assets/images/_W1A9739.jpg",
+    "caption": "Generational Shift — From Livestock Grazing to Higher Education",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-86",
+    "src": "assets/images/_W1A9747.jpg",
+    "caption": "Young Pastoralist Girl Looking Confidently Toward the Future",
+    "category": "portraits",
+    "tag": "Portrait"
+  },
+  {
+    "id": "photo-87",
+    "src": "assets/images/_W1A9750.jpg",
+    "caption": "Community Elders Meeting Under the Acacia Tree",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-88",
+    "src": "assets/images/_W1A9784.jpg",
+    "caption": "A Warm Smile on the Plains — Dignity in Every Step",
+    "category": "portraits",
+    "tag": "Portrait"
+  },
+  {
+    "id": "photo-89",
+    "src": "assets/images/_W1A9801.jpg",
+    "caption": "Northern Kenya Savanna — Where the Transformative Story Begins",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-90",
+    "src": "assets/images/_W1A9807.jpg",
+    "caption": "Livestock at Golden Hour — Pastoralist Heartland",
+    "category": "grazing",
+    "tag": "Savanna"
+  },
+  {
+    "id": "photo-91",
+    "src": "assets/images/_W1A9829.jpg",
+    "caption": "Portrait of Resilience — A Young Samburu Woman",
+    "category": "portraits",
+    "tag": "Portrait"
   }
 ];
 
@@ -1877,9 +874,12 @@ function renderGallery(reset = false) {
     item.dataset.index = idx;
 
     const isCustom = photo.id && photo.id.startsWith('user-');
-    const categoryLabel = photo.category === 'photobooth' ? 'Photo Booth' :
-                          photo.category === 'ceremony' ? 'Ceremony' :
-                          photo.category === 'portraits' ? 'Portrait' : 'Exhibition';
+    const categoryLabel = photo.category === 'portraits' ? 'Role Model' :
+                          photo.category === 'school' ? 'At School' :
+                          photo.category === 'grazing' ? 'Grazing Fields' :
+                          photo.category === 'job' ? 'On The Job' :
+                          photo.category === 'banking' ? 'Bank Details' :
+                          photo.category === 'launch' ? 'Exhibition' : 'Documentary';
 
     item.innerHTML = `
       <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.caption)}" loading="lazy">
@@ -2300,3 +1300,12 @@ contactForm?.addEventListener('submit', (e) => {
 });
 
 console.log('She Is Rising from the North site initialized with', allPhotos.length, 'gallery photos.');
+
+// Bank slip preview lightbox
+const bankSlipTrigger = document.getElementById('bank-slip-trigger');
+bankSlipTrigger?.addEventListener('click', () => {
+  openLightbox(0, [{
+    src: 'assets/images/Bank Details .jpeg',
+    caption: 'Official KCB Bank & Till Credentials — She Rises From The North Mentorship (Paybill: 522533 | Till / Acc: 8144533 | Dial *522#)'
+  }]);
+});
