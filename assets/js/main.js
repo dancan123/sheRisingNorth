@@ -261,7 +261,7 @@ const defaultPhotos = [
   },
   {
     "id": "photo-19",
-    "src": "assets/images/hildah_kathure.jpg",
+    "src": "assets/images/Hildas pics .png",
     "caption": "Hildah Kathure — Author, Photographer & MOV Liaison Officer",
     "category": "portraits",
     "tag": "Author"
