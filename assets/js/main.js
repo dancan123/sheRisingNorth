@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    SHE IS RISING FROM THE NORTH — Main JavaScript System
    ============================================================ */
 
@@ -34,8 +34,8 @@ window.SITE_CONFIG = {
     movFoundation: 'http://www.stichtingmov.nl'
   },
   onDonate: function(amount) {
-    console.log(`[Donation Triggered] Amount: ${amount}`);
-    showToast(`To complete your pledge of $${amount}, use KCB Paybill 522533 (Acc: 8144533) or Till 8144533.`, 'info');
+    console.log(`[Sponsorship Triggered] Amount: KSh ${amount}`);
+    openBankDetailsModal(amount);
   }
 };
 
@@ -1163,25 +1163,25 @@ renderGallery(true);
    7. SUPPORT / DONATION SYSTEM & COPY DETAILS
    ---------------------------------------------------------- */
 const impactData = {
-  25: {
-    title: '$25 Pledge',
-    desc: 'Provides full sets of textbooks, notebooks, mathematical sets and stationery for two students.'
+  30000: {
+    title: 'KSh 30,000 / Term',
+    desc: 'Funds secondary school tuition fees, boarding, complete uniform, textbooks, stationery and personal supplies for one full term.',
+    buttonText: 'Sponsor KSh 30,000 for One Term'
   },
-  50: {
-    title: '$50 Pledge',
-    desc: 'Funds a complete school uniform, textbooks, stationery and personal hygiene supplies for one full term.'
+  75000: {
+    title: 'KSh 75,000 / Year',
+    desc: 'Covers an entire academic year of high school education, examinations, boarding, and continuous mentorship for a student.',
+    buttonText: 'Sponsor KSh 75,000 for One Year'
   },
-  100: {
-    title: '$100 Pledge',
-    desc: 'Covers full boarding, term tuition, meals and mentorship for one secondary school student.'
-  },
-  250: {
-    title: '$250 Pledge',
-    desc: 'Sponsors an entire academic year including school fees, accommodation, uniform and university prep.'
+  300000: {
+    title: 'KSh 300,000 / 4-Year Full Period',
+    desc: 'Completely sponsors a girl through all four years of secondary school from Form 1 through Form 4 graduation.',
+    buttonText: 'Sponsor KSh 300,000 (Full 4-Year Period)'
   },
   custom: {
-    title: 'Custom Support',
-    desc: 'Every single dollar directly powers girls\' scholarships, mentorship workshops and book distributions.'
+    title: 'Custom Sponsorship (KSh)',
+    desc: 'Every single shilling goes directly to the secondary school to keep girls learning, safe, and thriving.',
+    buttonText: 'Sponsor in KSh Securely'
   }
 };
 
@@ -1194,21 +1194,21 @@ const impactDesc = document.getElementById('impact-desc');
 const donateBtn = document.getElementById('donate-btn');
 const donateBtnText = document.getElementById('donate-btn-text');
 
-let selectedAmount = '50';
+let selectedAmount = '30000';
 
 function updatePledgeDisplay(amountVal) {
   if (amountVal === 'custom') {
     if (customWrap) customWrap.style.display = 'flex';
     const entered = customInput?.value ? parseInt(customInput.value, 10) : 0;
-    if (impactAmount) impactAmount.textContent = entered > 0 ? `$${entered} Custom Support` : 'Custom Contribution';
+    if (impactAmount) impactAmount.textContent = entered > 0 ? `KSh ${entered.toLocaleString()} Custom Sponsorship` : 'Custom Contribution (KSh)';
     if (impactDesc) impactDesc.textContent = impactData.custom.desc;
-    if (donateBtnText) donateBtnText.textContent = entered > 0 ? `Donate $${entered} Securely` : 'Donate Securely';
+    if (donateBtnText) donateBtnText.textContent = entered > 0 ? `Sponsor KSh ${entered.toLocaleString()} Directly` : 'Sponsor in KSh Directly';
   } else {
     if (customWrap) customWrap.style.display = 'none';
-    const data = impactData[amountVal] || impactData[50];
+    const data = impactData[amountVal] || impactData[30000];
     if (impactAmount) impactAmount.textContent = data.title;
     if (impactDesc) impactDesc.textContent = data.desc;
-    if (donateBtnText) donateBtnText.textContent = `Donate $${amountVal} Securely`;
+    if (donateBtnText) donateBtnText.textContent = data.buttonText || `Sponsor KSh ${parseInt(amountVal, 10).toLocaleString()} Directly`;
   }
 }
 
@@ -1230,7 +1230,7 @@ customInput?.addEventListener('input', () => {
 donateBtn?.addEventListener('click', () => {
   let finalAmount = selectedAmount;
   if (selectedAmount === 'custom') {
-    finalAmount = customInput?.value ? parseInt(customInput.value, 10) : 50;
+    finalAmount = customInput?.value ? parseInt(customInput.value, 10) : 30000;
   }
   if (typeof window.SITE_CONFIG?.onDonate === 'function') {
     window.SITE_CONFIG.onDonate(finalAmount);
@@ -1298,11 +1298,122 @@ contactForm?.addEventListener('submit', (e) => {
 
 console.log('She Is Rising from the North site initialized with', allPhotos.length, 'gallery photos.');
 
-// Bank slip preview lightbox
+// Bank Details & Sponsorship Modal System
+const bankModal = document.getElementById('bank-modal');
+const bankModalClose = document.getElementById('bank-modal-close');
+const bankModalBackdrop = document.getElementById('bank-modal-backdrop');
+const bankModalReturnBtn = document.getElementById('bank-modal-return-btn');
+const bankModalPromptText = document.getElementById('bank-modal-prompt-text');
+const bankSlipCard = document.getElementById('bank-slip-card');
 const bankSlipTrigger = document.getElementById('bank-slip-trigger');
+
+function _resetModalUi() {
+  const promptIcon  = document.getElementById('bank-modal-prompt-icon');
+  const promptTitle = document.getElementById('bank-modal-prompt-title');
+  const hildahStrip = document.getElementById('bank-modal-hildah');
+  if (promptIcon)  promptIcon.textContent  = '\uD83D\uDCF1';
+  if (promptTitle) promptTitle.textContent = 'Complete Your Secondary School Sponsorship:';
+  if (hildahStrip) hildahStrip.style.display = 'none';
+}
+
+function openBankDetailsModal(amount) {
+  const num       = parseInt(amount, 10);
+  const formatted = num ? num.toLocaleString() : (amount || '75,000');
+
+  _resetModalUi();
+
+  if (bankModalPromptText) {
+    bankModalPromptText.innerHTML =
+      'To complete your sponsorship of <strong>KSh ' + formatted + '</strong>, use KCB Paybill ' +
+      '<strong>522533</strong> (Acc: <strong>8144533</strong>) or Till <strong>8144533</strong>. ' +
+      'Every shilling goes directly to the school!';
+  }
+
+  showToast(
+    'To complete your sponsorship of KSh ' + formatted + ', use KCB Paybill 522533 ' +
+    '(Acc: 8144533) or Till 8144533. Every shilling goes directly to the school!',
+    'info'
+  );
+
+  if (bankSlipCard) {
+    bankSlipCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    bankSlipCard.classList.add('highlighted');
+    setTimeout(() => bankSlipCard.classList.remove('highlighted'), 2800);
+  }
+
+  if (bankModal) {
+    bankModal.style.display = 'flex';
+    requestAnimationFrame(() => bankModal.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeBankDetailsModal() {
+  if (!bankModal) return;
+  bankModal.classList.remove('active');
+  setTimeout(() => {
+    bankModal.style.display = 'none';
+    _resetModalUi();
+  }, 280);
+  document.body.style.overflow = '';
+}
+
+bankModalClose?.addEventListener('click', closeBankDetailsModal);
+bankModalBackdrop?.addEventListener('click', closeBankDetailsModal);
+bankModalReturnBtn?.addEventListener('click', closeBankDetailsModal);
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && bankModal?.classList.contains('active')) {
+    closeBankDetailsModal();
+  }
+});
+
 bankSlipTrigger?.addEventListener('click', () => {
-  openLightbox(0, [{
-    src: 'assets/images/Bank Details .jpeg',
-    caption: 'Official KCB Bank & Till Credentials — She Rises From The North Mentorship (Paybill: 522533 | Till / Acc: 8144533 | Dial *522#)'
-  }]);
+  openBankDetailsModal(selectedAmount || 75000);
+});
+
+
+// --- Order Book & Exhibition Prints Handler ---
+document.querySelectorAll('.btn--order-item').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item           = btn.dataset.item;
+    const price          = parseInt(btn.dataset.price, 10);
+    const priceFormatted = price.toLocaleString();
+
+    const waText = encodeURIComponent(
+      'Hello Hildah, I would like to order "' + item + '" (KSh ' + priceFormatted + '). ' +
+      'I will pay via KCB Paybill 522533 (Acc: 8144533) or Till 8144533. ' +
+      'Please confirm my delivery details. Thank you!'
+    );
+
+    const promptIcon  = document.getElementById('bank-modal-prompt-icon');
+    const promptTitle = document.getElementById('bank-modal-prompt-title');
+    if (promptIcon)  promptIcon.textContent  = '\uD83D\uDCDA';
+    if (promptTitle) promptTitle.textContent = 'Order: \u201C' + item + '\u201D \u2014 KSh ' + priceFormatted;
+
+    if (bankModalPromptText) {
+      bankModalPromptText.innerHTML =
+        'To order <strong>\u201C' + item + '\u201D</strong> (KSh ' + priceFormatted + '), pay via KCB Paybill ' +
+        '<strong>522533</strong> (Acc: <strong>8144533</strong>) or Till <strong>8144533</strong>, ' +
+        'then contact Hildah Kathure at <strong>0720&nbsp;280&nbsp;171</strong> to arrange delivery. ' +
+        '<em>100% of proceeds goes directly to girls\u2019 school fees!</em>';
+    }
+
+    const hildahStrip = document.getElementById('bank-modal-hildah');
+    const waLink      = document.getElementById('bank-modal-wa-link');
+    if (hildahStrip) hildahStrip.style.display = 'block';
+    if (waLink)      waLink.href = 'https://wa.me/254720280171?text=' + waText;
+
+    if (bankSlipCard) {
+      bankSlipCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      bankSlipCard.classList.add('highlighted');
+      setTimeout(() => bankSlipCard.classList.remove('highlighted'), 2800);
+    }
+
+    if (bankModal) {
+      bankModal.style.display = 'flex';
+      requestAnimationFrame(() => bankModal.classList.add('active'));
+      document.body.style.overflow = 'hidden';
+    }
+  });
 });

@@ -36,32 +36,7 @@
        SITE HEADER — Unified Announcement & Navigation
        ==================================================== -->
   <header class="site-header" id="site-header" role="banner">
-    <!-- Top Announcement Bar -->
-    <div class="announcement-bar" role="complementary" aria-label="Tour dates announcement">
-      <div class="container announcement-bar__container">
-        <div class="announcement-bar__content">
-          <span class="announcement-badge">
-            <span class="announcement-badge__dot" aria-hidden="true"></span>
-            Exhibition Tour 2026
-          </span>
-          <span class="announcement-dates">
-            <strong>Nairobi</strong> (20 Sep) <span class="sep">&bull;</span>
-            <strong>Isiolo</strong> (24 Sep) <span class="sep">&bull;</span>
-            <strong>Merti</strong> (28 Sep) <span class="sep">&bull;</span>
-            <span class="announcement-time">2:00 &ndash; 5:00 PM</span> <span class="sep">&bull;</span>
-            <span class="announcement-free">Free Entry</span>
-          </span>
-        </div>
-        <a href="#tour" class="announcement-cta" id="announcement-tour-link">
-          <span>View Tour Schedule</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-
+    <!-- Top Announcement Bar removed (exhibitions concluded) -->
     <!-- Main Navigation Bar -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
       <div class="container">
@@ -75,10 +50,11 @@
             <li><a href="#story">The Story</a></li>
             <li><a href="#chapters">The Book</a></li>
             <li><a href="#voices">Voices</a></li>
-            <li><a href="#tour">Tour Dates</a></li>
+            <li><a href="#tour">Exhibitions</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#press">Press Release</a></li>
-            <li><a href="#support" class="nav__cta">Bank Details</a></li>
+            <li><a href="#press">Media &amp; Press</a></li>
+            <li><a href="#purchase" style="color:var(--clr-gold-light);font-weight:600;">Buy Book &amp; Photos</a></li>
+            <li><a href="#support" class="nav__cta">Support a Girl</a></li>
           </ul>
 
           <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
@@ -95,10 +71,11 @@
     <a href="#story">The Story</a>
     <a href="#chapters">The Book</a>
     <a href="#voices">Voices</a>
-    <a href="#tour">Tour Dates</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#press">Press Release</a>
-    <a href="#support">Bank Details</a>
+    <a href="#tour">Exhibitions &amp; Turnout</a>
+    <a href="#gallery">Photo Archive</a>
+    <a href="#press">Media &amp; Press</a>
+    <a href="#purchase">Buy Book &amp; Exhibition Photos</a>
+    <a href="#support">Support a Girl (High School Sponsorship)</a>
     <a href="#contact">Contact</a>
   </div>
 
@@ -124,7 +101,7 @@
       </div>
       <div class="hero__cred-pill">
         <span class="hero__cred-dot hero__cred-dot--gold" aria-hidden="true"></span>
-        Touring Nairobi &bull; Isiolo &bull; Merti
+        Exhibitions: Nairobi &bull; Isiolo &bull; Gafarsa &bull; Merti (Mar 2027)
       </div>
     </div>
 
@@ -160,7 +137,7 @@
 
           <!-- Subtitle -->
           <p class="hero__subtitle">
-            <span class="hero__sub-stat">420+ girls</span> guided to high school.
+            <span class="hero__sub-stat">420+ girls</span> sponsored through high school.
             <span class="hero__sub-stat">~100 young women</span> to university and college.
             A 15-year visual record of becoming &mdash; from the grazing fields of Isiolo to boardrooms,
             hospitals, and universities across Kenya.
@@ -183,10 +160,10 @@
               </span>
             </a>
             <a href="#support" class="btn btn--hero-outline" id="hero-bank-btn" style="border-color:#d4a853;color:#f0c97a;">
-              <span class="btn__icon" aria-hidden="true">🏦</span>
+              <span class="btn__icon" aria-hidden="true">🤝</span>
               <span class="btn__body">
-                <span class="btn__label">Bank Details</span>
-                <span class="btn__sub">KCB Till 8144533 &bull; Paybill 522533</span>
+                <span class="btn__label">Support a Girl</span>
+                <span class="btn__sub">High School Sponsorship &bull; KCB Paybill</span>
               </span>
             </a>
           </div>
@@ -206,7 +183,7 @@
     <div class="hero__float-cards" aria-hidden="true">
       <div class="hero__float-card">
         <span class="hero__float-num">420<sup>+</sup></span>
-        <span class="hero__float-lbl">Girls to High School</span>
+        <span class="hero__float-lbl">Sponsored through High School</span>
       </div>
       <div class="hero__float-card">
         <span class="hero__float-num">100<sup>+</sup></span>
@@ -230,9 +207,9 @@
   <section class="impact-strip" aria-label="Impact statistics">
     <div class="container">
       <div class="impact-strip__grid">
-        <div class="impact-stat">
-          <span class="impact-stat__number" data-count="420" data-suffix="+">420+</span>
-          <span class="impact-stat__label">Girls Guided to High School</span>
+        <div class="impact-stat" aria-label="Sponsored through High School 420 +">
+          <span class="impact-stat__number" data-count="420" data-suffix=" +">420 +</span>
+          <span class="impact-stat__label">Sponsored through High School</span>
         </div>
         <div class="impact-stat">
           <span class="impact-stat__number" data-count="100" data-suffix="+">100+</span>
@@ -243,8 +220,8 @@
           <span class="impact-stat__label">MOV Foundation in Northern Kenya</span>
         </div>
         <div class="impact-stat">
-          <span class="impact-stat__number" data-count="3" data-suffix=" Tour Stops">3 Tour Stops</span>
-          <span class="impact-stat__label">Nairobi &bull; Isiolo &bull; Merti</span>
+          <span class="impact-stat__number" data-count="320" data-suffix="+">320+</span>
+          <span class="impact-stat__label">Exhibition Attendees &bull; Nairobi, Isiolo, Gafarsa</span>
         </div>
       </div>
     </div>
@@ -413,6 +390,21 @@
           </div>
         </article>
 
+
+      <!-- Purchase Book Notice Strip -->
+      <div class="book-purchase-strip reveal" style="margin-top:3rem;background:linear-gradient(135deg,#241407 0%,#3d210b 100%);border:1px solid rgba(212,168,83,0.3);border-radius:var(--radius-md);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;">
+        <div>
+          <span style="display:inline-block;background:var(--clr-gold);color:var(--clr-earth-deep);font-size:0.7rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Acquire the Book &amp; Exhibition Prints</span>
+          <h4 style="font-family:var(--font-display);font-size:1.35rem;color:var(--clr-white);margin-bottom:0.25rem;">Support a Girl in School Through Every Purchase</h4>
+          <p style="color:var(--clr-sand);font-size:0.9rem;margin:0;">
+            Book: <strong>KSh 2,500</strong> &bull; Exhibition Photo Prints: <strong>KSh 3,000 (A2)</strong> &bull; <strong>KSh 5,000 (A1)</strong>. 100% of proceeds go towards school fees.
+          </p>
+        </div>
+        <a href="#purchase" class="btn btn--primary" style="white-space:nowrap;">
+          <span>Order Book or Prints &rarr;</span>
+        </a>
+      </div>
+
       </div>
     </div>
   </section>
@@ -505,16 +497,18 @@
   </section>
 
   <!-- ====================================================
-       EXHIBITION TOUR — DATES & PLACES
+       EXHIBITION TOUR — CONCLUDED DATES & TURNOUT
        ==================================================== -->
-  <section class="tour" id="tour" aria-label="Exhibition tour schedule">
+  <section class="tour" id="tour" aria-label="Exhibition tour and community turnout">
     <div class="container">
       <div class="tour__header reveal">
-        <p class="section-label" style="justify-content:center;color:var(--clr-gold);">Exhibition Tour 2026</p>
-        <h2>Dates &amp; Locations</h2>
-        <p style="color:rgba(255,255,255,0.75);font-size:1.05rem;margin-top:0.75rem;">
-          Join author &amp; photographer <strong>Hildah Kathure</strong> and <strong>Greet de Bruijn</strong> from the 
-          <strong>MOV Foundation (The Netherlands)</strong> for the live book presentations and exhibition gallery.
+        <p class="section-label" style="justify-content:center;color:var(--clr-gold);">Exhibition Journey &amp; Community Turnout</p>
+        <h2>Community Turnout &amp; Exhibition Dates</h2>
+        <p style="color:rgba(255,255,255,0.8);font-size:1.05rem;margin-top:0.75rem;">
+          The photographic exhibition &lsquo;She Is Rising From The North&rsquo; by <strong>Hildah Kathure</strong> and 
+          <strong>Greet de Bruijn</strong> from the <strong>MOV Foundation (The Netherlands)</strong> brought together 
+          students, community elders, pastoralist families, educators, and leaders across Kenya to champion girls&rsquo; education. 
+          Over <strong>320 participants</strong> attended the completed exhibitions in Nairobi, Isiolo, and Gafarsa, with Merti scheduled for March 2027.
         </p>
       </div>
 
@@ -522,43 +516,134 @@
 
         <!-- STOP 1: NAIROBI -->
         <div class="tour-card reveal reveal-delay-1">
-          <div class="tour-card__date-badge">📅 20 September 2026</div>
+          <div class="tour-card__date-badge tour-card__date-badge--concluded">
+            ✓ Concluded &bull; 20 Sep 2026
+          </div>
           <h3 class="tour-card__city">Nairobi</h3>
           <div class="tour-card__venue">Baraza Media Lab &ndash; Keystone Park</div>
+          
+          <div class="tour-card__turnout-box">
+            <div class="turnout-main">
+              <span class="turnout-num">121</span>
+              <span class="turnout-lbl">Verified Turnout</span>
+            </div>
+            <div class="turnout-details">
+              <span class="turnout-pill">👥 <strong>96</strong> Adults / Attendees</span>
+              <span class="turnout-pill">👧 <strong>25</strong> Children</span>
+            </div>
+          </div>
+
           <p class="tour-card__details">
-            95 Riverside Drive, Nairobi<br>
-            <strong>Time:</strong> 2:00 p.m. &ndash; 5:00 p.m.<br>
-            Presentations by Hildah Kathure &amp; Greet de Bruijn (MOV Foundation).
+            95 Riverside Drive, Nairobi.<br>
+            Book presentations by Hildah Kathure &amp; Greet de Bruijn (MOV Foundation), national media engagement, and public dialogue on girls&rsquo; educational financing.
           </p>
-          <div class="tour-card__tag">✓ Free Entry &bull; Public Welcome</div>
+          <div class="tour-card__tag" style="color:#8ade9e;">✓ Official Launch Completed</div>
         </div>
 
         <!-- STOP 2: ISIOLO -->
         <div class="tour-card reveal reveal-delay-2">
-          <div class="tour-card__date-badge">📅 24 September 2026</div>
+          <div class="tour-card__date-badge tour-card__date-badge--concluded">
+            ✓ Concluded &bull; 24 Sep 2026
+          </div>
           <h3 class="tour-card__city">Isiolo</h3>
           <div class="tour-card__venue">Ministry of Education Offices</div>
+          
+          <div class="tour-card__turnout-box">
+            <div class="turnout-main">
+              <span class="turnout-num">108</span>
+              <span class="turnout-lbl">Verified Turnout</span>
+            </div>
+            <div class="turnout-details">
+              <span class="turnout-pill">👥 <strong>65</strong> Adults / Attendees</span>
+              <span class="turnout-pill">🎓 <strong>43</strong> Students</span>
+            </div>
+          </div>
+
           <p class="tour-card__details">
-            Isiolo Town, Isiolo County<br>
-            <strong>Time:</strong> 2:00 p.m. &ndash; 5:00 p.m.<br>
-            Community elders, teachers, sponsored students and regional leaders.
+            Isiolo Town, Isiolo County.<br>
+            Community elders, teachers, sponsored secondary school students, parents, and regional education leaders championing education for the girl-child.
           </p>
-          <div class="tour-card__tag">✓ Free Entry &bull; Public Welcome</div>
+          <div class="tour-card__tag" style="color:#8ade9e;">✓ Community Exhibition Completed</div>
         </div>
 
-        <!-- STOP 3: MERTI -->
+        <!-- STOP 3: GAFARSA -->
         <div class="tour-card reveal reveal-delay-3">
-          <div class="tour-card__date-badge">📅 28 September 2026</div>
-          <h3 class="tour-card__city">Merti</h3>
-          <div class="tour-card__venue">Merti Boarding School</div>
+          <div class="tour-card__date-badge tour-card__date-badge--concluded">
+            ✓ Concluded &bull; Sep 2026
+          </div>
+          <h3 class="tour-card__city">Gafarsa</h3>
+          <div class="tour-card__venue">Gafarsa Community Grounds &amp; School</div>
+          
+          <div class="tour-card__turnout-box">
+            <div class="turnout-main">
+              <span class="turnout-num">95</span>
+              <span class="turnout-lbl">Verified Turnout</span>
+            </div>
+            <div class="turnout-details">
+              <span class="turnout-pill">👥 <strong>25</strong> Adults</span>
+              <span class="turnout-pill">👧 <strong>70</strong> Children</span>
+            </div>
+          </div>
+
           <p class="tour-card__details">
-            Merti Sub-County, Isiolo<br>
-            <strong>Time:</strong> 2:00 p.m. &ndash; 5:00 p.m.<br>
-            School community, parents, pastoralist families and education champions.
+            Gafarsa, Isiolo County.<br>
+            Pastoralist families, village elders, and young learners gathered to witness photographic portraits and life-changing stories of girls from their homeland.
           </p>
-          <div class="tour-card__tag">✓ Free Entry &bull; Public Welcome</div>
+          <div class="tour-card__tag" style="color:#8ade9e;">✓ Grassroots Gathering Completed</div>
         </div>
 
+        <!-- STOP 4: MERTI (UPCOMING) -->
+        <div class="tour-card reveal reveal-delay-4" style="border-color:rgba(212,168,83,0.45);background:rgba(212,168,83,0.06);">
+          <div class="tour-card__date-badge tour-card__date-badge--upcoming">
+            📅 Upcoming &bull; March 2027
+          </div>
+          <h3 class="tour-card__city">Merti</h3>
+          <div class="tour-card__venue">Merti Boarding School &amp; Community</div>
+          
+          <div class="tour-card__turnout-box">
+            <div class="turnout-main">
+              <span class="turnout-num" style="font-size:1.35rem;color:var(--clr-gold-light);">March 2027</span>
+              <span class="turnout-lbl">Scheduled Date</span>
+            </div>
+            <div class="turnout-details">
+              <span class="turnout-pill">🏫 Boarding School &amp; Pastoralists</span>
+            </div>
+          </div>
+
+          <p class="tour-card__details">
+            Merti Sub-County, Isiolo.<br>
+            School community, parents, pastoralist families, and education champions preparing for the upcoming exhibition gathering and book reading in Merti.
+          </p>
+          <div class="tour-card__tag" style="color:var(--clr-gold-light);">✨ Free Entry &bull; Scheduled for March 2027</div>
+        </div>
+
+      </div>
+
+      <!-- Tour Section Direct Support & Proceeds Card -->
+      <div class="tour-proceeds-card reveal" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(45,26,10,0.95) 0%,rgba(24,13,4,0.98) 100%);border:1.5px solid var(--clr-gold);border-radius:var(--radius-md);padding:1.6rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;box-shadow:0 12px 32px rgba(0,0,0,0.45),0 0 24px rgba(212,168,83,0.18);">
+        <div style="flex:1 1 500px;">
+          <div style="display:inline-flex;align-items:center;gap:0.45rem;background:rgba(212,168,83,0.18);border:1px solid rgba(212,168,83,0.35);color:var(--clr-gold-light);font-size:0.75rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">
+            <span>🎓 Keeping Girls in School</span>
+          </div>
+          <h3 style="font-family:var(--font-display);font-size:1.35rem;color:var(--clr-white);margin-bottom:0.45rem;">
+            100% of proceeds go towards keeping a girl in school.
+          </h3>
+          <p style="color:var(--clr-sand);font-size:0.95rem;line-height:1.6;margin:0;">
+            Pay via Paybill <strong>522533</strong> (Acc: <strong>8144533</strong>) or call/WhatsApp Hildah Kathure at <a href="https://wa.me/254720280171" target="_blank" rel="noopener" style="color:var(--clr-gold-light);text-decoration:underline;font-weight:700;">0720 280 171</a> to coordinate delivery.
+          </p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+          <button class="copy-btn" data-copy="522533" style="background:rgba(255,255,255,0.08);border:1px solid rgba(212,168,83,0.3);color:var(--clr-sand);padding:0.55rem 1rem;border-radius:var(--radius-pill);font-size:0.84rem;" type="button">
+            <span>Copy Paybill: 522533</span>
+          </button>
+          <a href="https://wa.me/254720280171?text=Hello%20Hildah,%20I%20would%20like%20to%20order%20the%20She%20Is%20Rising%20From%20The%20North%20book%20/%20exhibition%20prints." target="_blank" rel="noopener" class="btn btn--primary" style="padding:0.65rem 1.25rem;font-size:0.86rem;display:inline-flex;align-items:center;gap:0.4rem;">
+            <span>💬 WhatsApp Hildah (0720 280 171)</span>
+          </a>
+          <a href="#purchase" class="btn btn--outline" style="border-color:var(--clr-gold);color:var(--clr-gold-light);padding:0.65rem 1.1rem;font-size:0.86rem;">
+            <span>View Books &amp; Prints &rarr;</span>
+          </a>
+        </div>
       </div>
 
       <div class="tour__footer reveal">
@@ -609,6 +694,102 @@
           <p>
             <em>&lsquo;I have seen improvements over the years, such as a broader curriculum and the positive impact of digitization. Yet, the cost burden is almost impossible to carry for so many. Also the loan structure needs reform. It&rsquo;s a no-brainer: Education is a main driver of prosperity, economic growth and positive development in so many respects for so many people. So why not sharpen our focus to fulfill the much-felt need for affordable education, for a fairer student financing system and sustained investment in girls from marginalized communities? Next to the pictures and life-changing stories, the book also contains various facts and figures, on disastrous poverty rates, the persistent disadvantages girls are facing and for example labor market inequality, underscoring that fundamental change is of the essence. Which will pay off, to which this book clearly testifies.&rsquo;</em>
           </p>
+
+          
+          <!-- ==============================================
+               FEATURED MEDIA COVERAGE & YOUTUBE LINKS
+               ============================================== -->
+          <div class="press-media-links" id="media-coverage" style="margin-top:3.5rem;">
+            <div class="press-media-header" style="text-align:center;margin-bottom:2.2rem;">
+              <p class="section-label" style="justify-content:center;color:var(--clr-earth-warm);">In The News &amp; Broadcasts</p>
+              <h3 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.3rem);color:var(--clr-earth-deep);margin-bottom:0.75rem;">
+                Featured Media Articles &amp; Video Coverage
+              </h3>
+              <p style="color:var(--clr-muted);max-width:700px;margin:0 auto;font-size:1.02rem;">
+                Explore national news publications and video features documenting Hildah Kathure&rsquo;s &lsquo;She Is Rising From The North&rsquo; and the power of educating girls.
+              </p>
+            </div>
+
+            <div class="media-articles-grid">
+              
+              <!-- Standard Media -->
+              <article class="media-card">
+                <div class="media-card__source">
+                  <span class="media-badge media-badge--newspaper">The Standard</span>
+                  <span class="media-date">National Daily Newspaper</span>
+                </div>
+                <h4 class="media-card__title">
+                  &ldquo;Beyond Grazing Fields: Hildah Kathure Tells The Story Of Girls Rising From Northern Kenya&rdquo;
+                </h4>
+                <p class="media-card__snippet">
+                  Feature article detailing the 15-year photographic journey, the plight of pastoralist girls facing drought and domestic labor, and the transformative impact of the MOV Foundation&rsquo;s educational scholarships.
+                </p>
+                <a href="https://www.standardmedia.co.ke/health/features/article/2001559364/beyond-grazing-fields-hildah-kathure-tells-the-story-of-girls-rising-from-northern-kenya" 
+                   target="_blank" rel="noopener noreferrer" class="btn btn--media" aria-label="Read article on The Standard Media">
+                  <span>Read on The Standard</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </article>
+
+              <!-- Mwanzo TV -->
+              <article class="media-card">
+                <div class="media-card__source">
+                  <span class="media-badge media-badge--tv">Mwanzo TV</span>
+                  <span class="media-date">Television &bull; Digital News</span>
+                </div>
+                <h4 class="media-card__title">
+                  &ldquo;&lsquo;She Is Rising From The North&rsquo; The Book That Proves Educating One Girl Can Lift A Whole Generation&rdquo;
+                </h4>
+                <p class="media-card__snippet">
+                  Comprehensive multimedia report on Hildah Kathure&rsquo;s photobook release, highlighting why educating girls from Northern Kenya is a strategic economic powerhouse.
+                </p>
+                <a href="https://mwanzotv.com/she-is-rising-from-the-north-the-book-that-proves-educating-one-girl-can-lift-a-whole-generation/" 
+                   target="_blank" rel="noopener noreferrer" class="btn btn--media" aria-label="Read article on Mwanzo TV">
+                  <span>Read &amp; Watch on Mwanzo TV</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </article>
+
+              <!-- TNX Africa -->
+              <article class="media-card">
+                <div class="media-card__source">
+                  <span class="media-badge media-badge--tnx">TNX Africa</span>
+                  <span class="media-date">Pan-African Feature</span>
+                </div>
+                <h4 class="media-card__title">
+                  &ldquo;Northern Kenya: Girls&rsquo; Education and the Chance to Dream Beyond Survival&rdquo;
+                </h4>
+                <p class="media-card__snippet">
+                  In-depth story on how mentorship and schooling unlock imagination, opening pathways from pastoralist grazing fields to university auditoriums and professional leadership.
+                </p>
+                <a href="https://www.tnx.africa/features/article/2001559366/nothern-kenya-girls-education-and-the-chance-to-dream-beyond-survival" 
+                   target="_blank" rel="noopener noreferrer" class="btn btn--media" aria-label="Read feature on TNX Africa">
+                  <span>Read Feature on TNX Africa</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </article>
+
+              <!-- YouTube Video Coverage -->
+              <article class="media-card media-card--youtube">
+                <div class="media-card__source">
+                  <span class="media-badge media-badge--youtube">YouTube</span>
+                  <span class="media-date">Video &bull; Documentaries</span>
+                </div>
+                <h4 class="media-card__title">
+                  &ldquo;She Is Rising From The North — Video Features &amp; Exhibition Coverage&rdquo;
+                </h4>
+                <p class="media-card__snippet">
+                  Watch exhibition tour speeches, author interviews with Hildah Kathure, and documentary presentations highlighting Northern Kenyan girls on YouTube.
+                </p>
+                <a href="https://www.youtube.com/results?search_query=She+Is+Rising+From+The+North+Hildah+Kathure" 
+                   target="_blank" rel="noopener noreferrer" class="btn btn--media btn--media-yt" aria-label="Watch on YouTube">
+                  <span>Watch Videos on YouTube</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </article>
+
+            </div>
+          </div>
 
           <!-- Further info contact box -->
           <div class="press-release__contact">
@@ -760,21 +941,92 @@
   </div>
 
   <!-- ====================================================
-       BANK DETAILS
+       OFFICIAL BANK DETAILS & SPONSORSHIP POPUP MODAL
        ==================================================== -->
-  <section class="support" id="support" aria-label="Official Bank Details">
+  <div class="bank-modal" id="bank-modal" role="dialog" aria-modal="true" aria-label="Official Bank Details Slip" style="display:none;">
+    <div class="bank-modal__backdrop" id="bank-modal-backdrop"></div>
+    <div class="bank-modal__dialog">
+      <!-- Cancel / Close button in the top-right corner -->
+      <button class="bank-modal__close" id="bank-modal-close" aria-label="Cancel and return to site" title="Cancel and return to site" type="button">
+        <span>✕</span>
+        <span class="close-label">Cancel</span>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="bank-modal__header">
+        <div class="bank-modal__brand">
+          <span class="payment-logo payment-logo--kcb" style="background:#005a36;color:#ffffff;font-weight:800;padding:0.25rem 0.6rem;border-radius:4px;">KCB</span>
+          <span class="bank-modal__title">Official Bank Letterhead &amp; Slip</span>
+        </div>
+        <span class="payment-badge payment-badge--gold">CBK Regulated</span>
+      </div>
+
+      <!-- Sponsorship / Order Prompt Banner -->
+      <div class="bank-modal__prompt" id="bank-modal-prompt">
+        <div class="bank-modal__prompt-icon" id="bank-modal-prompt-icon">📱</div>
+        <div class="bank-modal__prompt-content">
+          <strong id="bank-modal-prompt-title">Complete Your Secondary School Sponsorship:</strong>
+          <p id="bank-modal-prompt-text">
+            To complete your sponsorship of <strong>KSh 75,000</strong>, use KCB Paybill <strong>522533</strong> (Acc: <strong>8144533</strong>) or Till <strong>8144533</strong>. Every shilling goes directly to the school!
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Preview -->
+      <div class="bank-modal__img-wrap">
+        <img src="assets/images/Bank Details .jpeg" alt="Official KCB Bank and Till Details Slip — She Rises From The North Mentorship" class="bank-modal__img">
+      </div>
+
+      <!-- Quick Actions / Copy Bar -->
+      <div class="bank-modal__actions">
+        <div class="bank-modal__quick-copy">
+          <span>Paybill: <strong>522533</strong></span>
+          <button class="copy-btn copy-btn--sm" data-copy="522533" type="button">Copy</button>
+          <span class="sep" style="color:rgba(212,168,83,0.5);margin:0 0.3rem;">&bull;</span>
+          <span>Acc / Till: <strong>8144533</strong></span>
+          <button class="copy-btn copy-btn--sm" data-copy="8144533" type="button">Copy</button>
+        </div>
+        <button class="btn btn--outline btn--sm" id="bank-modal-return-btn" type="button" style="color:var(--clr-sand);border-color:rgba(212,168,83,0.4);font-size:0.8rem;padding:0.35rem 0.85rem;border-radius:var(--radius-pill);">
+          Cancel &amp; Return to Site
+        </button>
+      </div>
+
+      <!-- Hildah Contact Strip (shown for orders) -->
+      <div class="bank-modal__hildah" id="bank-modal-hildah" style="display:none;">
+        <div class="bank-modal__hildah-inner">
+          <span class="bank-modal__hildah-label">📦 Delivery &amp; Enquiries — contact Hildah directly:</span>
+          <div class="bank-modal__hildah-btns">
+            <a
+              id="bank-modal-wa-link"
+              href="https://wa.me/254720280171?text=Hello%20Hildah%2C%20I%20would%20like%20to%20order%20a%20book%2Fprint."
+              target="_blank"
+              rel="noopener"
+              class="bank-modal__hildah-btn bank-modal__hildah-btn--wa"
+            >💬 WhatsApp Hildah</a>
+            <a href="tel:+254720280171" class="bank-modal__hildah-btn bank-modal__hildah-btn--call">📞 0720 280 171</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====================================================
+       GET INVOLVED — GIVE A NEW GIRL A CHANCE
+       ==================================================== -->
+  <section class="support" id="support" aria-label="Get Involved and Support Girls Education">
     <div class="container">
       <div class="support__header reveal">
-        <p class="section-label" style="justify-content:center;color:var(--clr-gold);margin-bottom:0.75rem;">Official Payment Information</p>
-        <h2>Bank <em class="text-gold">Details</em></h2>
+        <p class="section-label" style="justify-content:center;color:var(--clr-gold);margin-bottom:0.75rem;">Support Secondary School Girls</p>
+        <h2>Get Involved! <em class="text-gold">Give a New Girl a Chance</em></h2>
         <p class="support__subtitle">
-          Official KCB Bank, Lipa na Paybill, and Till details for <strong>SHE RISES FROM THE NORTH MENTORSHIP</strong>.
+          <strong>Every single shilling goes directly to the school</strong> and keeping girls in class &mdash; funding high school tuition fees, boarding, uniforms, textbooks, and personal supplies.
         </p>
       </div>
 
       <div class="support__grid reveal reveal-delay-1">
 
-        <!-- LEFT: Impact Story, Photo & Pledge Calculator -->
+        <!-- LEFT: High School Sponsorship Tiers (in Kenya Shillings KSh) -->
         <div class="support__pledge-col">
           <div class="support__card support__card--pledge">
             <div class="support__visual">
@@ -784,236 +1036,233 @@
                    loading="lazy">
               <div class="support__img-badge">
                 <span class="badge-dot"></span>
-                <span>Isiolo &bull; Marsabit &bull; Samburu</span>
+                <span>Secondary School Sponsorship</span>
               </div>
               <div class="support__img-caption">
-                <strong>Education Works:</strong> 420+ girls supported to high school &bull; ~100 to college and university.
+                <strong>Direct School Impact:</strong> Every shilling paid goes directly to the secondary school for school fees, boarding, uniform, and books.
               </div>
             </div>
 
             <div class="support__pledge-body">
+              <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-gold);font-weight:700;margin-bottom:0.6rem;">
+                Cost of Seeing a Girl Through High School:
+              </p>
+
+              <!-- Dynamic Impact Box -->
               <div class="support__impact-box" id="impact-box">
                 <div class="impact-box__icon">✨</div>
                 <div class="impact-box__text">
-                  <span class="impact-box__amount" id="impact-amount">$50 Pledge</span>
-                  <p class="impact-box__desc" id="impact-desc">Funds a complete school uniform, textbooks, stationery and personal supplies for one full term.</p>
+                  <span class="impact-box__amount" id="impact-amount">KSh 30,000 / Term</span>
+                  <p class="impact-box__desc" id="impact-desc">
+                    Funds tuition fees, boarding, complete school uniform, textbooks, stationery and personal supplies for one full term in secondary school.
+                  </p>
                 </div>
               </div>
 
-              <div class="support__amounts" role="group" aria-label="Select donation amount">
-                <button class="amount-chip" data-amount="25" type="button">$25</button>
-                <button class="amount-chip selected" data-amount="50" type="button">$50</button>
-                <button class="amount-chip" data-amount="100" type="button">$100</button>
-                <button class="amount-chip" data-amount="250" type="button">$250</button>
-                <button class="amount-chip" data-amount="custom" type="button">Custom</button>
+              <!-- Sponsorship Tier Chips in KSh -->
+              <div class="support__amounts" role="group" aria-label="Select secondary school sponsorship tier in Kenya Shillings">
+                <button class="amount-chip selected" data-amount="30000" type="button">
+                  <span class="chip-cost">30K</span>
+                  <span class="chip-sub">Per Term</span>
+                </button>
+                <button class="amount-chip" data-amount="75000" type="button">
+                  <span class="chip-cost">75K</span>
+                  <span class="chip-sub">Per Year</span>
+                </button>
+                <button class="amount-chip" data-amount="300000" type="button">
+                  <span class="chip-cost">300K</span>
+                  <span class="chip-sub">4-Year Cycle</span>
+                </button>
+                <button class="amount-chip" data-amount="custom" type="button">
+                  <span class="chip-cost">Custom</span>
+                  <span class="chip-sub">Any KSh</span>
+                </button>
               </div>
 
+              <!-- Custom Amount Input in KSh -->
               <div class="support__custom-wrap" id="custom-wrap" style="display:none;">
-                <span class="currency-symbol">$</span>
-                <input type="number" id="custom-amount" placeholder="Enter amount (USD)" min="1"
-                  class="custom-amount-input" aria-label="Custom donation amount in USD">
+                <span class="currency-symbol">KSh</span>
+                <input type="number" id="custom-amount" placeholder="Enter amount in KSh (e.g. 10000)" min="100" step="100"
+                  class="custom-amount-input" aria-label="Custom sponsorship amount in Kenya Shillings">
               </div>
 
+              <!-- Sponsor Button -->
               <button class="btn btn--primary btn--donate" id="donate-btn" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-                <span id="donate-btn-text">Pledge $50 Securely</span>
+                <span id="donate-btn-text">Sponsor KSh 30,000 for One Term</span>
               </button>
 
               <div class="support__trust-badges">
-                <span>🔒 Regulated by Central Bank of Kenya</span>
+                <span>🏫 100% Direct to School</span>
+                <span>🔒 Central Bank Regulated</span>
                 <span>📜 MOV Foundation (25+ Yrs)</span>
-                <span>🧾 Official Receipt</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: Verified Payment Channels with Copy Details & Official Bank Details Flyer -->
+        <!-- RIGHT: Verified Payment Credentials & Purchase Book / Photos Card -->
         <div class="support__channels-col">
-          <div class="channels-intro">
-            <h3>Verified Banking &amp; Payment Methods</h3>
-            <p>Direct bank transfers, mobile money, and till payments are handled under the registered account <strong>She Rises From The North Mentorship</strong>.</p>
+
+          <!-- 1. PURCHASE BOOK & EXHIBITION PHOTOS (ALL PROCEEDS GO TO SCHOOL) -->
+          <div class="payment-card payment-card--purchase" id="purchase" style="border-left:3.5px solid var(--clr-gold);background:rgba(212,168,83,0.06);margin-bottom:1.5rem;scroll-margin-top:90px;">
+            <div class="payment-card__header">
+              <div class="payment-card__brand">
+                <span class="payment-logo" style="background:var(--clr-gold);color:var(--clr-earth-deep);font-size:1.1rem;">📚</span>
+                <span class="payment-card__title">Purchase Book &amp; Exhibition Photos</span>
+              </div>
+              <span class="payment-badge payment-badge--gold">Proceeds to Girls&rsquo; School Fees</span>
+            </div>
+            <p class="payment-card__subtitle" style="color:var(--clr-sand);font-size:0.92rem;">
+              The exhibition was dedicated to selling photobooks and high-resolution gallery prints to fund secondary education:
+            </p>
+
+            <div class="merch-items-grid">
+              
+              <!-- Item 1: Book -->
+              <div class="merch-item">
+                <div class="merch-item__info">
+                  <strong class="merch-item__title">&lsquo;She Is Rising From The North&rsquo; Book</strong>
+                  <span class="merch-item__desc">Official documentary photo-book &bull; Hardcopy</span>
+                </div>
+                <div class="merch-item__price-box">
+                  <span class="merch-item__price">KSh 2,500</span>
+                  <button class="btn btn--order-item" data-item="She Is Rising From The North Book" data-price="2500" type="button">Order Book</button>
+                </div>
+              </div>
+
+              <!-- Item 2: Photo A2 -->
+              <div class="merch-item">
+                <div class="merch-item__info">
+                  <strong class="merch-item__title">Exhibition Photo Print &mdash; A2 Size</strong>
+                  <span class="merch-item__desc">420 &times; 594 mm &bull; High-definition museum archival print</span>
+                </div>
+                <div class="merch-item__price-box">
+                  <span class="merch-item__price">KSh 3,000</span>
+                  <button class="btn btn--order-item" data-item="Exhibition Photo Print (A2 Size)" data-price="3000" type="button">Order A2</button>
+                </div>
+              </div>
+
+              <!-- Item 3: Photo A1 -->
+              <div class="merch-item">
+                <div class="merch-item__info">
+                  <strong class="merch-item__title">Exhibition Photo Print &mdash; A1 Size</strong>
+                  <span class="merch-item__desc">594 &times; 841 mm &bull; Large-format collector&rsquo;s archival print</span>
+                </div>
+                <div class="merch-item__price-box">
+                  <span class="merch-item__price">KSh 5,000</span>
+                  <button class="btn btn--order-item" data-item="Exhibition Photo Print (A1 Size)" data-price="5000" type="button">Order A1</button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="payment-card__footer" style="margin-top:1rem;background:rgba(0,0,0,0.25);padding:0.75rem 1rem;border-radius:var(--radius-sm);font-size:0.85rem;">
+              <span>
+                🎓 <strong>100% of proceeds</strong> go towards keeping a girl in school. Pay via Paybill <strong>522533</strong> (Acc: <strong>8144533</strong>) or call/WhatsApp Hildah Kathure at <a href="tel:0720280171" style="color:var(--clr-gold-light);text-decoration:underline;font-weight:600;">0720 280 171</a> to coordinate delivery.
+              </span>
+            </div>
           </div>
 
-          <div class="payment-channels-list">
-
-            <!-- 0. OFFICIAL BANK & TILL FLYER SLIP -->
-            <div class="payment-card payment-card--official-slip">
-              <div class="payment-card__header">
-                <div class="payment-card__brand">
-                  <span class="payment-logo payment-logo--kcb">KCB</span>
-                  <span class="payment-card__title">Official Bank &amp; Till Credentials</span>
-                </div>
-                <span class="payment-badge payment-badge--gold">Verified Official Slip</span>
+          <!-- 2. DIRECT, SIMPLE, NON-REPEATED PAYMENT CREDENTIALS -->
+          <div class="payment-card payment-card--unified" style="border-left:3.5px solid #28a745;">
+            <div class="payment-card__header">
+              <div class="payment-card__brand">
+                <span class="payment-logo payment-logo--kcb">KCB</span>
+                <span class="payment-logo payment-logo--mpesa">M-PESA</span>
+                <span class="payment-card__title">Direct Payment Credentials</span>
               </div>
-              <p class="payment-card__subtitle">Official KCB Bank slip for <strong>SHE RISES FROM THE NORTH MENTORSHIP</strong>:</p>
+              <span class="payment-badge payment-badge--green">Simple &bull; Direct &bull; Verified</span>
+            </div>
+            <p class="payment-card__subtitle">
+              All contributions go under registered account <strong>SHE RISES FROM THE NORTH MENTORSHIP</strong>. Every shilling goes straight to the school:
+            </p>
+
+            <div class="payment-card__fields">
               
-              <!-- Clickable Bank Slip Image -->
-              <div class="bank-slip-preview" id="bank-slip-trigger" role="button" tabindex="0" title="Click to view full banking slip in high resolution">
-                <img src="assets/images/Bank Details .jpeg" alt="Official KCB Bank and Till Details Slip — She Rises From The North Mentorship" class="bank-slip-img">
-                <div class="bank-slip-overlay">
-                  <span>🏛️ KCB Bank &bull; Paybill 522533 &bull; Till 8144533</span>
-                  <span class="bank-slip-btn">🔍 View Full Slip</span>
+              <!-- Business / Paybill -->
+              <div class="payment-field">
+                <span class="payment-field__label">Paybill / Business No:</span>
+                <div class="payment-field__val-row">
+                  <strong class="payment-field__val">522533</strong>
+                  <button class="copy-btn" data-copy="522533" title="Copy Paybill Number" type="button">
+                    <span>Copy</span>
+                  </button>
                 </div>
               </div>
 
-              <div class="payment-card__footer" style="margin-top:0.75rem;">
-                <span>🏛️ Regulated by the Central Bank of Kenya &bull; Free payments via Vooma / *522# &amp; M-Pesa</span>
+              <!-- Account Number / Till -->
+              <div class="payment-field">
+                <span class="payment-field__label">Account No / Till No:</span>
+                <div class="payment-field__val-row">
+                  <strong class="payment-field__val">8144533</strong>
+                  <button class="copy-btn" data-copy="8144533" title="Copy Account / Till Number" type="button">
+                    <span>Copy</span>
+                  </button>
+                </div>
               </div>
+
+              <!-- Account Name -->
+              <div class="payment-field">
+                <span class="payment-field__label">Account Name:</span>
+                <div class="payment-field__val-row">
+                  <strong class="payment-field__val" style="font-size:0.92rem;">SHE RISES FROM THE NORTH MENTORSHIP</strong>
+                  <button class="copy-btn" data-copy="SHE RISES FROM THE NORTH MENTORSHIP" title="Copy Account Name" type="button">
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Bank Name -->
+              <div class="payment-field">
+                <span class="payment-field__label">Bank Name:</span>
+                <div class="payment-field__val-row">
+                  <strong class="payment-field__val">KCB Bank Kenya</strong>
+                  <button class="copy-btn" data-copy="KCB Bank Kenya" title="Copy Bank Name" type="button">
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
             </div>
 
-            <!-- 1. LIPA NA PAYBILL (ALL MOBILE MONEY) -->
-            <div class="payment-card payment-card--mpesa">
-              <div class="payment-card__header">
-                <div class="payment-card__brand">
-                  <span class="payment-logo payment-logo--mpesa">M-PESA</span>
-                  <span class="payment-card__title">Lipa na Paybill (M-Pesa &bull; Airtel &bull; T-Kash)</span>
-                </div>
-                <span class="payment-badge payment-badge--green">Instant Mobile Money</span>
-              </div>
-              <p class="payment-card__subtitle">Pay directly from Safaricom M-Pesa, Airtel Money or Telkom T-Kash:</p>
-              
-              <div class="payment-card__fields">
-                <div class="payment-field">
-                  <span class="payment-field__label">Business / Paybill No:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">522533</strong>
-                    <button class="copy-btn" data-copy="522533" title="Copy Paybill Number" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Account Number:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">8144533</strong>
-                    <button class="copy-btn" data-copy="8144533" title="Copy Account Number" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Account Name:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val" style="font-size:0.92rem;">SHE RISES FROM THE NORTH MENTORSHIP</strong>
-                    <button class="copy-btn" data-copy="SHE RISES FROM THE NORTH MENTORSHIP" title="Copy Account Name" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="payment-card__footer">
-                <span>📱 M-Pesa Menu &gt; Lipa na M-Pesa &gt; Paybill &gt; Enter <strong>522533</strong> &gt; Account: <strong>8144533</strong></span>
-              </div>
+            <!-- Simple Payment Instructions in one clear guide -->
+            <div class="payment-simple-instructions" style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.86rem;color:rgba(255,255,255,0.85);line-height:1.65;">
+              <p style="margin-bottom:0.4rem;color:var(--clr-gold-light);font-weight:600;">How to pay directly:</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+                <li>📱 <strong>M-Pesa / Mobile Money:</strong> Lipa na M-Pesa &gt; Paybill &gt; Business: <strong>522533</strong> &gt; Account: <strong>8144533</strong></li>
+                <li>🏦 <strong>KCB Till / Vooma / *522#:</strong> Lipa na Till &gt; Till Number: <strong>8144533</strong> <em>(Kulipa ni Free!)</em></li>
+                <li>🏛️ <strong>Bank Transfer / EFT:</strong> KCB Bank Kenya &bull; Account: <strong>SHE RISES FROM THE NORTH MENTORSHIP</strong> &bull; Ref: <strong>8144533</strong></li>
+              </ul>
             </div>
-
-            <!-- 2. LIPA NA KCB TILL (KULIPA NI FREE) -->
-            <div class="payment-card payment-card--bank">
-              <div class="payment-card__header">
-                <div class="payment-card__brand">
-                  <span class="payment-logo payment-logo--kcb">KCB</span>
-                  <span class="payment-card__title">Lipa na KCB Till (Vooma / *522#)</span>
-                </div>
-                <span class="payment-badge payment-badge--gold">Zero Transaction Fee &bull; Free</span>
-              </div>
-              <p class="payment-card__subtitle">Pay via KCB Mobile App, Vooma, or USSD *522# with no extra transaction charges:</p>
-
-              <div class="payment-card__fields">
-                <div class="payment-field">
-                  <span class="payment-field__label">KCB Till Number:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">8144533</strong>
-                    <button class="copy-btn" data-copy="8144533" title="Copy Till Number" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Merchant / Account:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val" style="font-size:0.92rem;">SHE RISES FROM THE NORTH MENTORSHIP</strong>
-                    <button class="copy-btn" data-copy="SHE RISES FROM THE NORTH MENTORSHIP" title="Copy Account Name" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Quick USSD:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">*522#</strong>
-                    <button class="copy-btn" data-copy="*522#" title="Copy USSD Code" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="payment-card__footer">
-                <span>🏦 Dial *522# or open KCB App &bull; Select Lipa na Till &bull; Enter Till <strong>8144533</strong> (Kulipa ni Free!)</span>
-              </div>
-            </div>
-
-            <!-- 3. DIRECT BANK WIRE (KCB BANK KENYA) -->
-            <div class="payment-card payment-card--cheque">
-              <div class="payment-card__header">
-                <div class="payment-card__brand">
-                  <span class="payment-logo payment-logo--bank">🏦</span>
-                  <span class="payment-card__title">KCB Bank Kenya &bull; Direct Transfer</span>
-                </div>
-                <span class="payment-badge payment-badge--neutral">National &bull; Wire</span>
-              </div>
-              <p class="payment-card__subtitle">Electronic EFT, RTGS, or over-the-counter deposit at any KCB Bank branch:</p>
-
-              <div class="payment-card__fields">
-                <div class="payment-field">
-                  <span class="payment-field__label">Bank Name:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">KCB Bank Kenya</strong>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Account Name:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">She Rises From The North Mentorship</strong>
-                    <button class="copy-btn" data-copy="She Rises From The North Mentorship" title="Copy Account Name" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Account / Till Ref:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">8144533</strong>
-                    <button class="copy-btn" data-copy="8144533" title="Copy Reference" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="payment-field">
-                  <span class="payment-field__label">Business Paybill:</span>
-                  <div class="payment-field__val-row">
-                    <strong class="payment-field__val">522533</strong>
-                    <button class="copy-btn" data-copy="522533" title="Copy Paybill" type="button">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="payment-card__footer">
-                <span>🌍 For international contributions, email <em>hildahk83@gmail.com</em> for wire instructions.</span>
-              </div>
-            </div>
-
           </div>
+
+          <!-- 3. OFFICIAL BANK SLIP PREVIEW -->
+          <div class="payment-card payment-card--official-slip" id="bank-slip-card" style="margin-top:1.5rem;scroll-margin-top:100px;">
+            <div class="payment-card__header">
+              <div class="payment-card__brand">
+                <span class="payment-logo payment-logo--kcb">KCB</span>
+                <span class="payment-card__title">Official Bank Letterhead &amp; Slip</span>
+              </div>
+              <span class="payment-badge payment-badge--gold">CBK Regulated</span>
+            </div>
+            
+            <div class="bank-slip-preview" id="bank-slip-trigger" role="button" tabindex="0" title="Click to view full banking slip in high resolution">
+              <img src="assets/images/Bank Details .jpeg" alt="Official KCB Bank and Till Details Slip — She Rises From The North Mentorship" class="bank-slip-img">
+              <div class="bank-slip-overlay">
+                <span>🏛️ KCB Bank &bull; Paybill 522533 &bull; Till 8144533</span>
+                <span class="bank-slip-btn">🔍 View Full Slip</span>
+              </div>
+            </div>
+
+            <div class="payment-card__footer" style="margin-top:0.75rem;">
+              <span>🏛️ Regulated by the Central Bank of Kenya &bull; Registered for <em>She Rises From The North Mentorship</em></span>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -1192,18 +1441,18 @@
             <li><a href="#voices">Voices of the North</a></li>
             <li><a href="#tour">Tour Schedule</a></li>
             <li><a href="#gallery">Photo Gallery</a></li>
-            <li><a href="#press">Press Release</a></li>
+            <li><a href="#press">Media &amp; Press</a></li>
           </ul>
         </div>
 
         <div>
           <p class="footer__col-title">Get Involved</p>
           <ul class="footer__links">
-            <li><a href="#support">Bank Details</a></li>
-            <li><a href="#tour">Attend Exhibition Tour</a></li>
-            <li><a href="#contact">Order the Photo-Book</a></li>
-            <li><a href="#contact">Host an Exhibition</a></li>
-            <li><a href="#press">Media &amp; Press Info</a></li>
+            <li><a href="#support">Support a Girl</a></li>
+            <li><a href="#purchase">Buy Book &amp; Exhibition Photos</a></li>
+            <li><a href="#tour">Exhibitions &amp; Turnout</a></li>
+            <li><a href="#press">Media &amp; Press Coverage</a></li>
+            <li><a href="#contact">Contact &amp; Host Exhibition</a></li>
           </ul>
         </div>
 
