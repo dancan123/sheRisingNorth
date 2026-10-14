@@ -48,6 +48,7 @@
 
           <ul class="nav__links" role="list">
             <li><a href="#story">The Story</a></li>
+            <li><a href="#women-who-rose">Portraits</a></li>
             <li><a href="#chapters">The Book</a></li>
             <li><a href="#voices">Voices</a></li>
             <li><a href="#tour">Exhibitions</a></li>
@@ -69,6 +70,7 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Close menu">✕</button>
     <a href="#story">The Story</a>
+    <a href="#women-who-rose">Portraits (Women Who Rose)</a>
     <a href="#chapters">The Book</a>
     <a href="#voices">Voices</a>
     <a href="#tour">Exhibitions &amp; Turnout</a>
@@ -84,14 +86,34 @@
        ==================================================== -->
   <section class="hero" id="hero" aria-label="She Is Rising from the North">
 
-    <!-- Background image with grain overlay -->
-    <div class="hero__bg">
-      <img src="assets/images/front page pic.jpg"
-        alt="Acacia tree silhouette against a radiant golden sunrise across the Northern Kenya savanna — She Is Rising from the North"
-        fetchpriority="high" width="1600" height="1200">
+    <!-- Background slideshow with grain overlay -->
+    <div class="hero__bg" id="hero-bg">
+      <div class="hero__slide hero__slide--1 active" data-credit="Classroom at Kisima Secondary &bull; Samburu">
+        <img src="assets/images/_W1A0372.jpg"
+          alt="Inspiring classroom scene with dedicated students and teacher in Northern Kenya — She Is Rising from the North"
+          fetchpriority="high" width="1600" height="1067">
+      </div>
+      <div class="hero__slide hero__slide--2" data-credit="Sunrise across Northern Kenya Savanna &bull; Isiolo">
+        <img src="assets/images/front page pic.jpg"
+          alt="Golden dawn across Northern Kenya savanna — She Is Rising from the North"
+          loading="lazy" width="1600" height="1200">
+      </div>
+      <div class="hero__slide hero__slide--3" data-credit="Kaltuma Abdi &amp; Daughter Amina &bull; Isiolo">
+        <img src="assets/images/Kaltuma Abdi and her Daughter Amina Abdi- One generation nurturing the dreams of the next.jpg"
+          alt="Kaltuma Abdi and her daughter Amina Abdi in Isiolo — She Is Rising from the North"
+          loading="lazy" width="1600" height="1067">
+      </div>
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
+
+    <!-- Photo credit & Navigation dots -->
+    <div class="hero__photo-credit" id="hero-photo-credit">Classroom at Kisima Secondary &bull; Samburu</div>
+    <div class="hero__slide-dots" id="hero-slide-dots" aria-label="Hero slide navigation">
+      <button class="hero__dot active" data-slide="0" aria-label="Slide 1: Classroom"></button>
+      <button class="hero__dot" data-slide="1" aria-label="Slide 2: Savanna Sunrise"></button>
+      <button class="hero__dot" data-slide="2" aria-label="Slide 3: Kaltuma &amp; Amina"></button>
+    </div>
 
     <!-- Floating credential pills (top-right) -->
     <div class="hero__credentials" aria-label="Project credentials">
@@ -231,6 +253,29 @@
   </section>
 
   <!-- ====================================================
+       EDITORIAL MARQUEE RIBBON
+       ==================================================== -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">479+ Girls Sponsored <span>✦</span></div>
+      <div class="marquee-item">100+ University Graduates <span>✦</span></div>
+      <div class="marquee-item">15-Year Documentary Archive <span>✦</span></div>
+      <div class="marquee-item">MOV Foundation &bull; 25 Years in Kenya <span>✦</span></div>
+      <div class="marquee-item">Photography by Hildah Kathure <span>✦</span></div>
+      <div class="marquee-item">Isiolo &bull; Nairobi &bull; Gafarsa &bull; Merti <span>✦</span></div>
+      <div class="marquee-item">Education is Economic Power <span>✦</span></div>
+      <!-- Duplicate for seamless infinite loop -->
+      <div class="marquee-item">479+ Girls Sponsored <span>✦</span></div>
+      <div class="marquee-item">100+ University Graduates <span>✦</span></div>
+      <div class="marquee-item">15-Year Documentary Archive <span>✦</span></div>
+      <div class="marquee-item">MOV Foundation &bull; 25 Years in Kenya <span>✦</span></div>
+      <div class="marquee-item">Photography by Hildah Kathure <span>✦</span></div>
+      <div class="marquee-item">Isiolo &bull; Nairobi &bull; Gafarsa &bull; Merti <span>✦</span></div>
+      <div class="marquee-item">Education is Economic Power <span>✦</span></div>
+    </div>
+  </div>
+
+  <!-- ====================================================
        THE STORY & PREFACE BY HILDAH KATHURE
        ==================================================== -->
   <section class="story" id="story" aria-label="About the project">
@@ -306,6 +351,104 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       WOMEN WHO ROSE — Editorial Portrait Gallery Strip
+       ==================================================== -->
+  <section class="women-rose" id="women-who-rose" aria-label="Portraits of resilient women from Northern Kenya">
+    <div class="container">
+      <div class="women-rose__header reveal">
+        <p class="section-label" style="justify-content:center;color:var(--clr-gold);">Editorial Portrait Series</p>
+        <h2>Women Who Rose</h2>
+        <p>From pastoralist beginnings to national leadership &mdash; intimate documentary portraits of dignity, resilience, and educational triumph across Northern Kenya.</p>
+      </div>
+    </div>
+
+    <!-- Horizontal scroll gallery track -->
+    <div class="women-rose__track" id="women-rose-track" role="region" aria-label="Women portraits gallery">
+      <!-- Card 1: Batula Fayo -->
+      <article class="women-rose__card">
+        <img src="assets/images/Batula Fayo a teacher at Kisima Primary School.jpg"
+          alt="Batula Fayo — Teacher at Kisima Primary School" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Act Two &bull; At School</span>
+          <h3 class="women-rose__card-name">Batula Fayo</h3>
+          <p class="women-rose__card-role">Primary School Teacher &bull; Kisima Primary</p>
+          <p class="women-rose__card-quote">&ldquo;Standing in front of a chalkboard, I show every girl that her mind belongs at the front of the room.&rdquo;</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Dr. Zeinab Gura -->
+      <article class="women-rose__card">
+        <img src="assets/images/Dr. Zeinab Gura - CEO Kenya University TRR Hospital Nairobi.jpg"
+          alt="Dr. Zeinab Gura — CEO Kenyatta University Teaching, Referral &amp; Research Hospital" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Act Three &bull; On the Job</span>
+          <h3 class="women-rose__card-name">Dr. Zeinab Gura</h3>
+          <p class="women-rose__card-role">Doctor &bull; CEO Kenyatta University TRRH, Nairobi</p>
+          <p class="women-rose__card-quote">&ldquo;Education gave me more than a profession. It gave me the confidence to serve and lead.&rdquo;</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Kaltuma & Amina Abdi -->
+      <article class="women-rose__card">
+        <img src="assets/images/Kaltuma Abdi and her Daughter Amina Abdi- One generation nurturing the dreams of the next.jpg"
+          alt="Kaltuma Abdi and her daughter Amina Abdi" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Generations</span>
+          <h3 class="women-rose__card-name">Kaltuma &amp; Amina</h3>
+          <p class="women-rose__card-role">Mother &amp; Daughter &bull; Isiolo County</p>
+          <p class="women-rose__card-quote">&ldquo;One generation holding the foundation so the next generation can fly without limits.&rdquo;</p>
+        </div>
+      </article>
+
+      <!-- Card 4: Girl at Kisima -->
+      <article class="women-rose__card">
+        <img src="assets/images/A girl at Kisima - writing the future.jpg"
+          alt="A girl at Kisima writing her future" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Act Two &bull; At School</span>
+          <h3 class="women-rose__card-name">Student Scholar</h3>
+          <p class="women-rose__card-role">Form 2 Student &bull; Kisima Secondary</p>
+          <p class="women-rose__card-quote">&ldquo;With every notebook page I fill, the pasture lands stretch into possibilities.&rdquo;</p>
+        </div>
+      </article>
+
+      <!-- Card 5: Classroom in Action -->
+      <article class="women-rose__card">
+        <img src="assets/images/_W1A0372.jpg"
+          alt="Classroom learning in Northern Kenya" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Act Two &bull; Transformation</span>
+          <h3 class="women-rose__card-name">The Scholars</h3>
+          <p class="women-rose__card-role">Kisima Secondary School &bull; Samburu</p>
+          <p class="women-rose__card-quote">&ldquo;When you educate a girl from the North, you transform an entire community.&rdquo;</p>
+        </div>
+      </article>
+
+      <!-- Card 6: Pastoralist Dawn -->
+      <article class="women-rose__card">
+        <img src="assets/images/MDV-2.jpg"
+          alt="Grazing fields of Northern Kenya" loading="lazy">
+        <div class="women-rose__card-overlay"></div>
+        <div class="women-rose__card-body">
+          <span class="women-rose__card-chapter">Act One &bull; Roots</span>
+          <h3 class="women-rose__card-name">On the Grazing Fields</h3>
+          <p class="women-rose__card-role">Dawn over Isiolo pastoralist rangelands</p>
+          <p class="women-rose__card-quote">&ldquo;Not where dreams end, but where the strength to overcome is forged.&rdquo;</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="women-rose__scroll-hint" aria-hidden="true">
+      <span>Drag or scroll to explore portraits</span>
     </div>
   </section>
 

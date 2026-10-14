@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -370,20 +370,70 @@ a { color: inherit; text-decoration: none; }
   padding-top: calc(75px + 2rem);
 }
 
-/* Background */
+/* ---- Hero Slideshow Background ---- */
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.hero__bg img {
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.45, 0, 0.25, 1);
+  will-change: opacity;
+}
+
+.hero__slide.active { opacity: 1; }
+
+.hero__slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 45%;
-  transform: scale(1.06);
-  animation: heroZoom 16s ease-out forwards;
+  object-position: center 30%;
+  animation: heroZoom 20s ease-out forwards;
+  will-change: transform;
+}
+
+.hero__slide--1 img { object-position: center 30%; }
+.hero__slide--2 img { object-position: center 40%; }
+.hero__slide--3 img { object-position: center 35%; }
+
+/* Slide dots */
+.hero__slide-dots {
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 0.6s 2.5s ease forwards;
+}
+
+.hero__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--dur-med) var(--ease-smooth);
+  padding: 0;
+}
+
+.hero__dot.active {
+  background: var(--clr-gold);
+  border-color: var(--clr-gold);
+  height: 20px;
+  border-radius: 3px;
+}
+
+.hero__dot:hover {
+  border-color: var(--clr-gold);
+  background: rgba(212,168,83,0.4);
 }
 
 @keyframes heroZoom {
@@ -391,14 +441,14 @@ a { color: inherit; text-decoration: none; }
   to   { transform: scale(1.00); }
 }
 
-/* Layered gradient — richer depth */
+/* Layered gradient — richer, more cinematic depth */
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to right, rgba(26,14,5,0.75) 0%, rgba(26,14,5,0.25) 60%, transparent 100%),
-    linear-gradient(to top,   rgba(26,14,5,0.98) 0%, rgba(26,14,5,0.6) 35%, rgba(26,14,5,0.1) 65%, transparent 100%);
+    linear-gradient(to right, rgba(12,5,2,0.82) 0%, rgba(12,5,2,0.5) 45%, rgba(12,5,2,0.08) 75%, transparent 100%),
+    linear-gradient(to top, rgba(12,5,2,1) 0%, rgba(12,5,2,0.75) 25%, rgba(12,5,2,0.35) 55%, rgba(12,5,2,0.05) 80%, transparent 100%);
 }
 
 /* Film-grain texture */
@@ -406,7 +456,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   z-index: 2;
-  opacity: 0.035;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px;
   pointer-events: none;
@@ -3140,44 +3190,193 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   MOBILE MENU
+   MOBILE MENU — Premium Fullscreen Edition
    ============================================================ */
 .mobile-menu {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background: var(--clr-earth-deep);
+  z-index: 9990;
+  background: linear-gradient(135deg, #0e0602 0%, #1a0e05 60%, #0d1a0c 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  padding: 2rem;
+  overflow-y: auto;
   transform: translateX(100%);
-  transition: transform var(--dur-slow) var(--ease-smooth);
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .mobile-menu.open { transform: translateX(0); }
 
-.mobile-menu a {
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212,168,83,0.15);
+  margin-bottom: 3rem;
+}
+
+.mobile-menu__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.mobile-menu__brand-title {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.15rem;
   color: var(--clr-white);
-  transition: color var(--dur-fast);
+  letter-spacing: 0.01em;
 }
 
-.mobile-menu a:hover { color: var(--clr-gold); }
+.mobile-menu__brand-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
 
 .mobile-menu__close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.85);
+  font-size: 1.15rem;
   cursor: pointer;
+  transition: all var(--dur-fast);
+  flex-shrink: 0;
 }
+
+.mobile-menu__close:hover {
+  background: rgba(212,168,83,0.15);
+  border-color: var(--clr-gold);
+  color: var(--clr-gold);
+  transform: rotate(90deg);
+}
+
+.mobile-menu__nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: all var(--dur-fast);
+  transform: translateX(0);
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus {
+  color: var(--clr-gold);
+  padding-left: 0.5rem;
+  border-bottom-color: rgba(212,168,83,0.2);
+}
+
+.mobile-menu__link-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--clr-gold);
+  opacity: 0.6;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.mobile-menu__link-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.65rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.mobile-menu__link--cta {
+  margin-top: 1.5rem;
+  background: var(--clr-gold);
+  color: var(--clr-earth-deep) !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: var(--radius-md);
+  border-bottom: none !important;
+  font-weight: 700;
+}
+
+.mobile-menu__link--cta:hover {
+  background: var(--clr-gold-light) !important;
+  padding-left: 1.5rem !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,168,83,0.4);
+}
+
+.mobile-menu__link--cta .mobile-menu__link-text {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.mobile-menu__footer {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mobile-menu__footer-text {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mobile-menu__socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.mobile-menu__social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  transition: all var(--dur-fast);
+  text-decoration: none;
+}
+
+.mobile-menu__social-link:hover {
+  background: rgba(212,168,83,0.15);
+  border-color: var(--clr-gold);
+  color: var(--clr-gold);
+}
+
+/* Hamburger active state */
+.nav__hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav__hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav__hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
 /* ============================================================
    RESPONSIVE
@@ -4251,3 +4450,316 @@ a { color: inherit; text-decoration: none; }
   .bank-modal__hildah-btns { width: 100%; }
   .bank-modal__hildah-btn { flex: 1; justify-content: center; }
 }
+
+/* ============================================================
+   WOMEN WHO ROSE — Editorial Portrait Strip
+   ============================================================ */
+.women-rose {
+  padding: var(--sp-xl) 0;
+  background: var(--clr-earth-deep);
+  overflow: hidden;
+  position: relative;
+}
+
+.women-rose::before {
+  content: 'WOMEN WHO ROSE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-3deg);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-style: italic;
+  font-weight: 700;
+  color: rgba(255,255,255,0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.women-rose__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.women-rose__header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-style: italic;
+  color: var(--clr-white);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.women-rose__header p {
+  color: rgba(255,255,255,0.55);
+  max-width: 540px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Horizontal scroll track */
+.women-rose__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0 var(--sp-md) var(--sp-md);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.women-rose__track::-webkit-scrollbar { display: none; }
+.women-rose__track:active { cursor: grabbing; }
+
+/* Each portrait card */
+.women-rose__card {
+  flex: 0 0 clamp(280px, 28vw, 360px);
+  scroll-snap-align: start;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--clr-earth-dark);
+  transition: transform var(--dur-med) var(--ease-smooth);
+}
+
+.women-rose__card:hover { transform: translateY(-6px); }
+
+.women-rose__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform var(--dur-slow) var(--ease-smooth);
+  display: block;
+}
+
+.women-rose__card:hover img { transform: scale(1.05); }
+
+.women-rose__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,4,1,0.95) 0%,
+    rgba(10,4,1,0.6) 35%,
+    rgba(10,4,1,0.1) 65%,
+    transparent 100%
+  );
+}
+
+.women-rose__card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem 1.5rem;
+}
+
+.women-rose__card-chapter {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.women-rose__card-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  color: var(--clr-white);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.women-rose__card-role {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.04em;
+}
+
+.women-rose__card-quote {
+  margin-top: 0.75rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--dur-med) var(--ease-smooth);
+}
+
+.women-rose__card:hover .women-rose__card-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll prompt */
+.women-rose__scroll-hint {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.women-rose__scroll-hint::before,
+.women-rose__scroll-hint::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ============================================================
+   HERO — Hero Photo Caption (slide label)
+   ============================================================ */
+.hero__photo-credit {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  z-index: 10;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.6s 2.2s ease forwards;
+}
+
+/* ============================================================
+   IMPACT STRIP — Enhanced
+   ============================================================ */
+.impact-strip__grid { position: relative; }
+
+.impact-stat {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  transition: background var(--dur-fast);
+}
+
+.impact-stat:hover { background: rgba(255,255,255,0.03); }
+
+.impact-stat::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(212,168,83,0.12);
+}
+
+.impact-stat:last-child::after { display: none; }
+
+/* ============================================================
+   STORY — Enhanced
+   ============================================================ */
+.story__visual::before {
+  content: '';
+  position: absolute;
+  inset: -1rem;
+  background: radial-gradient(circle at 30% 70%, rgba(201,125,62,0.06) 0%, transparent 70%);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+.story__img-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   HERO — Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero__slide-dots { display: none; }
+  .hero__photo-credit { display: none; }
+}
+
+/* ============================================================
+   WOMEN WHO ROSE — Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .women-rose__card {
+    flex: 0 0 clamp(240px, 72vw, 300px);
+  }
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS — Stagger
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   MARQUEE — Subtle text ribbon between sections
+   ============================================================ */
+.marquee-strip {
+  overflow: hidden;
+  background: var(--clr-earth-dark);
+  border-top: 1px solid rgba(212,168,83,0.1);
+  border-bottom: 1px solid rgba(212,168,83,0.1);
+  padding: 0.85rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marqueeScroll 32s linear infinite;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.marquee-item span {
+  color: var(--clr-gold);
+  font-size: 0.5rem;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-strip:hover .marquee-track { animation-play-state: paused; }
+
