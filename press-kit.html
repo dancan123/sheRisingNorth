@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Exhibition Press Kit &bull; She Is Rising from the North</title>
+  <meta name="description" content="Official 2-page Curated Exhibition Press Release & Curatorial Pack for journalists, curators, and institutional donors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-earth-deep: #1a0e05;
+      --clr-earth-dark: #2d1a0a;
+      --clr-earth-mid: #7a4520;
+      --clr-earth-warm: #c97d3e;
+      --clr-gold: #d4a853;
+      --clr-gold-light: #f0c97a;
+      --clr-cream: #faf6ef;
+      --clr-sand: #f5ede0;
+      --clr-white: #ffffff;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #110903;
+      color: #222222;
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    /* Top action bar */
+    .action-bar {
+      max-width: 900px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .back-link {
+      color: var(--clr-gold-light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--clr-white); }
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn-action {
+      background: var(--clr-gold);
+      color: var(--clr-earth-deep);
+      text-decoration: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: var(--clr-gold-light);
+      transform: translateY(-1px);
+    }
+    .btn-action--outline {
+      background: transparent;
+      color: var(--clr-gold-light);
+      border: 1px solid rgba(212, 168, 83, 0.5);
+    }
+    .btn-action--outline:hover {
+      background: rgba(212, 168, 83, 0.15);
+      color: var(--clr-white);
+    }
+
+    /* Main document container (replicates A4 sheet on screen) */
+    .document-page {
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      background: var(--clr-white);
+      padding: 3.5rem 3.5rem 3rem 3.5rem;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .doc-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--clr-gold);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .doc-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-earth-warm);
+    }
+    .doc-embargo {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-earth-mid);
+    }
+
+    .doc-title {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      line-height: 1.15;
+      color: var(--clr-earth-deep);
+      margin-bottom: 0.5rem;
+    }
+    .doc-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--clr-earth-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stat strip */
+    .doc-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      background: var(--clr-sand);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--clr-gold);
+      margin-bottom: 1.75rem;
+      text-align: center;
+    }
+    .doc-stat-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--clr-earth-deep);
+      line-height: 1.1;
+    }
+    .doc-stat-lbl {
+      font-size: 0.7rem;
+      color: var(--clr-earth-mid);
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    h2.section-heading {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--clr-earth-deep);
+      border-bottom: 1px solid rgba(212,168,83,0.3);
+      padding-bottom: 0.35rem;
+      margin: 1.5rem 0 0.8rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    p.doc-p {
+      font-size: 0.92rem;
+      color: #333333;
+      margin-bottom: 0.85rem;
+      line-height: 1.65;
+    }
+
+    /* Act Cards */
+    .act-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .act-card {
+      background: #fdfaf6;
+      border: 1px solid rgba(212,168,83,0.35);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+    .act-card h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--clr-earth-deep);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+    .act-card p {
+      font-size: 0.8rem;
+      color: #555555;
+      line-height: 1.45;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: var(--clr-cream);
+      border-left: 4px solid var(--clr-gold);
+      padding: 1.1rem 1.4rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .quote-box blockquote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--clr-earth-deep);
+      line-height: 1.5;
+    }
+    .quote-box cite {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      font-style: normal;
+      font-weight: 700;
+      color: var(--clr-earth-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Page break for printing */
+    .page-separator {
+      margin: 3rem 0;
+      border: none;
+      border-top: 1px dashed rgba(212,168,83,0.4);
+      position: relative;
+      text-align: center;
+    }
+    .page-separator::after {
+      content: 'PAGE 2: EVIDENCE, VOICES & SPECIFICATIONS';
+      position: absolute;
+      top: -0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #110903;
+      color: var(--clr-gold);
+      padding: 0 1rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    /* Case Studies Grid */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .case-card {
+      background: var(--clr-sand);
+      border: 1px solid rgba(212,168,83,0.4);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+    .case-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--clr-earth-deep);
+    }
+    .case-card .role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--clr-earth-mid);
+      margin-bottom: 0.5rem;
+    }
+    .case-card p {
+      font-size: 0.8rem;
+      color: #333333;
+      line-height: 1.45;
+    }
+
+    /* Policy list */
+    .policy-list {
+      list-style: none;
+      margin: 0.8rem 0;
+    }
+    .policy-list li {
+      font-size: 0.88rem;
+      color: #333333;
+      margin-bottom: 0.5rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .policy-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--clr-gold);
+      font-size: 0.75rem;
+      top: 0.1rem;
+    }
+
+    /* Specs box */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: #fbf7f0;
+      border: 1px solid rgba(212,168,83,0.3);
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 1.25rem 0;
+    }
+    .specs-item h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--clr-earth-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .specs-item p {
+      font-size: 0.8rem;
+      color: #555555;
+      line-height: 1.4;
+    }
+
+    /* Footer contact strip */
+    .doc-contact {
+      background: var(--clr-earth-deep);
+      color: var(--clr-white);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      border-top: 3px solid var(--clr-gold);
+    }
+    .doc-contact h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-gold);
+      margin-bottom: 0.5rem;
+    }
+    .doc-contact p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+    }
+    .doc-contact a {
+      color: var(--clr-gold-light);
+      text-decoration: none;
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .action-bar, .page-separator { display: none !important; }
+      .document-page {
+        box-shadow: none;
+        max-width: 100%;
+        margin: 0;
+        padding: 1.5cm 1.5cm;
+        page-break-after: always;
+      }
+      .document-page:last-child { page-break-after: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .document-page { padding: 2rem 1.25rem; }
+      .doc-stats, .act-cards, .case-grid, .specs-grid, .doc-contact {
+        grid-template-columns: 1fr;
+      }
+      .doc-title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="action-bar">
+    <a href="index.html#press" class="back-link">
+      &larr; Return to Main Website
+    </a>
+    <div class="btn-group">
+      <a href="assets/docs/She_Is_Rising_From_The_North_Press_Kit.pdf" download="She_Is_Rising_From_The_North_Press_Kit.pdf" class="btn-action">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF (2 Pages)
+      </a>
+      <button onclick="window.print()" class="btn-action btn-action--outline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- PAGE 1 OF 2 -->
+  <main class="document-page" id="page-1">
+    <div class="doc-meta">
+      <span class="doc-badge">EXHIBITION PRESS PACK &bull; CURATORIAL BRIEF</span>
+      <span class="doc-embargo">FOR IMMEDIATE RELEASE</span>
+    </div>
+
+    <h1 class="doc-title">She Is Rising from the North</h1>
+    <p class="doc-subtitle">A Documentary Photography Project, Photo-Book &amp; Education Initiative &bull; Northern Kenya</p>
+
+    <!-- Key Statistics -->
+    <div class="doc-stats">
+      <div>
+        <div class="doc-stat-num">479+</div>
+        <div class="doc-stat-lbl">Girls Sponsored Through High School</div>
+      </div>
+      <div>
+        <div class="doc-stat-num">~100</div>
+        <div class="doc-stat-lbl">Scholars at University &amp; Colleges</div>
+      </div>
+      <div>
+        <div class="doc-stat-num">25+ Yrs</div>
+        <div class="doc-stat-lbl">MOV Foundation in Northern Kenya</div>
+      </div>
+      <div>
+        <div class="doc-stat-num">90+</div>
+        <div class="doc-stat-lbl">Authentic Documentary Photographs</div>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Executive Summary &amp; Curatorial Narrative</h2>
+    <p class="doc-p">
+      <strong>“She Is Rising from the North”</strong> is a landmark documentary exhibition, photographic monograph, and ongoing educational advocacy project chronicling fifteen years of transformative female leadership in Northern Kenya (Isiolo, Samburu, Marsabit, and Garissa counties). Created by acclaimed Kenyan documentary filmmaker and photographer <strong>Hildah Kathure</strong> in partnership with <strong>MOV Foundation (Stichting MOV, The Netherlands)</strong>, the initiative reframes the public perception of Northern Kenya from a narrative of passive vulnerability to one of extraordinary resilience, intellect, and economic agency.
+    </p>
+    <p class="doc-p">
+      For pastoralist girls, secondary school is rarely a given. Severe distances, costly boarding fees, recurring climate droughts, and deep-seated pressures toward early marriage create profound barriers after primary school. Yet, through long-term sponsorship, 479+ young women have broken through these structural obstacles. Kathure's camera provides an intimate, dignifying witness to their trajectory—from the pastoralist rangelands to university lecture halls, surgical wards, and corporate boardrooms.
+    </p>
+
+    <h2 class="section-heading">The Three-Act Structure of the Exhibition &amp; Book</h2>
+    <div class="act-cards">
+      <div class="act-card">
+        <h3>Act I: On the Grazing Fields</h3>
+        <p>The pastoralist foundation. Life in Isiolo and Samburu; water journeys, livestock herding, and dreams quietly carried under the desert sun.</p>
+      </div>
+      <div class="act-card">
+        <h3>Act II: At School</h3>
+        <p>The arrival at boarding secondary school. Discovering science, debates, and personal voice. Dreams transform into uniforms, certificates, and ambition.</p>
+      </div>
+      <div class="act-card">
+        <h3>Act III: On the Job</h3>
+        <p>The graduates in society. Doctors, teachers, veterinarians, hospital CEOs, and entrepreneurs proving education is an engine of generational prosperity.</p>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <blockquote>
+        &ldquo;Northern Kenya is often described as marginalized. But these girls are not a margin. They are the centre of a future we all share. Inequality is not fate. Education can turn a life around.&rdquo;
+      </blockquote>
+      <cite>&mdash; Hildah Kathure, Photographer &amp; MOV Liaison Officer</cite>
+    </div>
+  </main>
+
+  <hr class="page-separator">
+
+  <!-- PAGE 2 OF 2 -->
+  <main class="document-page" id="page-2">
+    <div class="doc-meta">
+      <span class="doc-badge">WOMEN WHO ROSE &bull; EVIDENCE OF GENERATIONAL IMPACT</span>
+      <span class="doc-embargo">PAGE 2 OF 2</span>
+    </div>
+
+    <h2 class="section-heading" style="margin-top:0;">Profiles in Courage &amp; Transformative Leadership</h2>
+    <div class="case-grid">
+      <div class="case-card">
+        <h3>Dr. Zeinab Gura</h3>
+        <div class="role">CEO, Kenyatta University TRRH (Nairobi)</div>
+        <p>From pastoralist roots in Northern Kenya to leading one of East Africa's premier national referral hospitals. <i>&ldquo;Education gave me more than a profession; it gave me the confidence to lead and prove dreams from the North are valid.&rdquo;</i></p>
+      </div>
+      <div class="case-card">
+        <h3>Batula Fayo</h3>
+        <div class="role">Teacher, Kisima Primary School</div>
+        <p>Educated through MOV Foundation sponsorship, Batula returned directly to her home community to teach the next generation of girls. <i>&ldquo;Standing in front of the chalkboard, I show every girl that her mind belongs at the front of the room.&rdquo;</i></p>
+      </div>
+      <div class="case-card">
+        <h3>Kamila Abkanu</h3>
+        <div class="role">Veterinary Doctor &amp; Ag. Director</div>
+        <p>Acting Director of Livestock for Isiolo County. Protecting pastoralist herds—the vital backbone of community economy. <i>&ldquo;Treating animals protects families' dignity, livelihood, and resilience against drought.&rdquo;</i></p>
+      </div>
+    </div>
+
+    <h2 class="section-heading">The Economic Case: Combating Poverty Through Education</h2>
+    <p class="doc-p">
+      Data compiled within the photo-book highlights that secondary education for a girl in Northern Kenya delivers an estimated <strong>20–25% increase in lifetime earnings</strong> and fundamentally breaks the multi-generational cycle of early child marriage. The initiative advocates for three concrete policy and institutional priorities:
+    </p>
+    <ul class="policy-list">
+      <li><strong>Targeted Secondary Boarding Subsidies:</strong> Eliminating the fatal transition gap between Grade 8 and Form 1 where most girls drop out due to boarding fee shortfalls.</li>
+      <li><strong>Fairer Higher Education Financing:</strong> Reforming student loan criteria to prevent pastoralist university qualifiers from forfeiting admissions due to lack of upfront tuition.</li>
+      <li><strong>100% Proceeds Model:</strong> All sales of books and photo prints go directly and transparently into secondary school tuition fees for deserving girls from Isiolo and surrounding counties.</li>
+    </ul>
+
+    <h2 class="section-heading">Exhibition Specifications &amp; Purchasing</h2>
+    <div class="specs-grid">
+      <div class="specs-item">
+        <h4>Documentary Photo-Book</h4>
+        <p>Hardcover collector's edition containing 90+ authentic documentary photographs, essays, and economic analysis.<br><strong>Price:</strong> KSh 2,500 (100% to school fees)</p>
+      </div>
+      <div class="specs-item">
+        <h4>Curated Museum Prints</h4>
+        <p>Fine-art exhibition prints on archival photographic paper.<br><strong>A2 Print:</strong> KSh 3,000 &bull; <strong>A1 Print:</strong> KSh 5,000<br>KCB Paybill: <strong>522533</strong> | Acc: <strong>8144533</strong></p>
+      </div>
+      <div class="specs-item">
+        <h4>Exhibition Tour Venues</h4>
+        <p><strong>Nairobi:</strong> Baraza Media Lab<br><strong>Isiolo:</strong> Catholic Mission Hall<br><strong>Gafarsa:</strong> Community Hall<br><strong>Merti:</strong> March 2027 Upcoming</p>
+      </div>
+    </div>
+
+    <!-- Official Contacts -->
+    <div class="doc-contact">
+      <div>
+        <h4>Media, Curatorial &amp; Donor Inquiries</h4>
+        <p>
+          <strong>Hildah Kathure</strong> &mdash; Author, Filmmaker, MOV Liaison<br>
+          Kalmax Productions &bull; Nairobi, Kenya<br>
+          <strong>Phone:</strong> <a href="tel:0720280171">+254 720 280 171</a><br>
+          <strong>Email:</strong> <a href="mailto:hildahk83@gmail.com">hildahk83@gmail.com</a><br>
+          <strong>Web:</strong> <a href="https://www.kalmaxproductions.com" target="_blank" rel="noopener">www.kalmaxproductions.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>MOV Foundation Partnership</h4>
+        <p>
+          <strong>MOV Foundation (Stichting MOV)</strong><br>
+          The Netherlands &bull; 25+ Years in Northern Kenya<br>
+          <strong>Web:</strong> <a href="http://www.stichtingmov.nl" target="_blank" rel="noopener">www.stichtingmov.nl</a><br>
+          <strong>Online Portal:</strong> <a href="index.html">sherisingnorth.com</a><br>
+          <strong>High School Sponsorship:</strong> KCB Paybill 522533 / Till 8144533
+        </p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
