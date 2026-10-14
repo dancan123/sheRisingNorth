@@ -1419,66 +1419,7 @@ document.querySelectorAll('.btn--order-item').forEach(btn => {
 });
 
 /* ----------------------------------------------------------
-   21. CINEMATIC HERO SLIDESHOW SYSTEM
-   ---------------------------------------------------------- */
-(function initHeroSlideshow() {
-  const slides = document.querySelectorAll('.hero__slide');
-  const dots   = document.querySelectorAll('.hero__dot');
-  const credit = document.getElementById('hero-photo-credit');
-  if (!slides.length) return;
-
-  let currentIdx = 0;
-  let timer = null;
-
-  function setSlide(idx) {
-    slides.forEach((s, i) => {
-      s.classList.toggle('active', i === idx);
-    });
-    dots.forEach((d, i) => {
-      d.classList.toggle('active', i === idx);
-    });
-    if (credit && slides[idx]) {
-      const cr = slides[idx].getAttribute('data-credit');
-      if (cr) credit.innerHTML = cr;
-    }
-    currentIdx = idx;
-  }
-
-  function nextSlide() {
-    const next = (currentIdx + 1) % slides.length;
-    setSlide(next);
-  }
-
-  function startAuto() {
-    stopAuto();
-    timer = setInterval(nextSlide, 7000);
-  }
-
-  function stopAuto() {
-    if (timer) clearInterval(timer);
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const target = parseInt(dot.getAttribute('data-slide'), 10);
-      if (!isNaN(target)) {
-        setSlide(target);
-        startAuto();
-      }
-    });
-  });
-
-  const heroSec = document.getElementById('hero');
-  if (heroSec) {
-    heroSec.addEventListener('mouseenter', stopAuto);
-    heroSec.addEventListener('mouseleave', startAuto);
-  }
-
-  startAuto();
-})();
-
-/* ----------------------------------------------------------
-   22. WOMEN WHO ROSE — TOUCH & MOUSE HORIZONTAL DRAG
+   21. WOMEN WHO ROSE — TOUCH & MOUSE HORIZONTAL DRAG
    ---------------------------------------------------------- */
 (function initWomenRoseTrack() {
   const track = document.getElementById('women-rose-track');
